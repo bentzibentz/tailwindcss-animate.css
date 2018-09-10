@@ -3,6 +3,7 @@ const keyframesLightSpeed = require('./keyframes/lightspeed');
 const keyframesFlip = require('./keyframes/flip');
 const keyframesRotateIn = require('./keyframes/rotateIn');
 const keyframesRotateOut = require('./keyframes/rotateOut');
+const keyframesRoll = require('./keyframes/roll');
 
 module.exports = function () {
     return function ({ addUtilities }) {
@@ -112,6 +113,12 @@ module.exports = function () {
             '.rotateOutUpRight': {
                 animationName: 'rotateOutUpRight',
             },
+            '.rollIn': {
+                animationName: 'rollIn',
+            },
+            '.rollOut': {
+                animationName: 'rollOut',
+            },
             '@keyframes bounce': keyframes.keyframeBounce,
             '@keyframes flash': keyframes.keyframeFlash,
             '@keyframes pulse': keyframes.keyframePulse,
@@ -142,6 +149,8 @@ module.exports = function () {
             '@keyframes rotateOutDownRight': keyframesRotateOut.keyframeRotateOutDownRight,
             '@keyframes rotateOutUpLeft': keyframesRotateOut.keyframeRotateOutUpLeft,
             '@keyframes rotateOutUpRight': keyframesRotateOut.keyframeRotateOutUpRight,
+            '@keyframes rollIn': keyframesRoll.keyframeRollIn,
+            '@keyframes rollOut': keyframesRoll.keyframeRollOut,
         })
     };
 };
