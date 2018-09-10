@@ -1,5 +1,5 @@
-# Animate CSS - TailwindCSS Plugin
-Add [Animate CSS](https://github.com/daneden/animate.css) as [TailwindCSS](https://github.com/tailwindcss/tailwindcss) plugin to your project.
+# Animate CSS - Tailwind CSS Plugin
+Add [Animate CSS](https://github.com/daneden/animate.css) as [Tailwind CSS](https://github.com/tailwindcss/tailwindcss) plugin to your project.
 
 
 ## Installation
@@ -26,6 +26,41 @@ plugins: [
 ```
 
 The plugin generates all the animate.css utility classes for you.
+
+### Available Naimate CSS classes
+* .animated
+* .infinite
+* .bounce
+* .flash
+* .pulse
+* .rubberBand
+* .shake
+* .headShakte
+* .swing
+* .tada
+* .wobble
+* .jello
+* .heartBeat
+* .hinge
+* .jackInTheBox
+* .lightSpeedIn
+* .lightSpeedOut
+* .flip
+* .flipInX
+* .flipInY
+* .flipOutX
+* .flipOutY
+* .rotateIn
+* .rotateInDownLeft
+* .rotateInDownRight
+* .rotateInUpLeft
+* .rotateInUpRight
+* .rotateOut
+* .rotateOutDownLeft
+* .rotateOutDownRight
+* .rotateOutUpLeft
+* .rotateOutUpRight
+
 
 ## Credits
 

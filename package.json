@@ -1,0 +1,23 @@
+{
+  "name": "tailwindcss-animatecss",
+  "version": "0.0.1",
+  "description": "Add Animate CSS as Tailwind CSS plugin to your project.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bentzibentz/tailwindcss-animate.css.git"
+  },
+  "keywords": [
+    "tailwind",
+    "tailwindcss",
+    "animatecss",
+    "animate.css",
+    "css"
+  ],
+  "author": "Fabian Bentz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bentzibentz/tailwindcss-animate.css/issues"
+  },
+  "homepage": "https://github.com/bentzibentz/tailwindcss-animate.css#readme"
+}

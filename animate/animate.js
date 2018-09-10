@@ -1,4 +1,8 @@
 const keyframes = require('./keyframes/keyframes');
+const keyframesLightSpeed = require('./keyframes/lightspeed');
+const keyframesFlip = require('./keyframes/flip');
+const keyframesRotateIn = require('./keyframes/rotateIn');
+const keyframesRotateOut = require('./keyframes/rotateOut');
 
 module.exports = function () {
     return function ({ addUtilities }) {
@@ -56,6 +60,58 @@ module.exports = function () {
             '.jackInTheBox': {
                 animationName: 'jackInTheBox',
             },
+            '.lightSpeedIn': {
+                animationName: 'lightSpeedIn',
+            },
+            '.lightSpeedOut': {
+                animationName: 'lightSpeedOut',
+            },
+            '.flip': {
+                animationName: 'flip',
+                backfaceVisibility: 'visible'
+            },
+            '.flipInX': {
+                animationName: 'flipInX',
+                backfaceVisibility: 'visible'
+            },
+            '.flipInY': {
+                animationName: 'flipInY',
+                backfaceVisibility: 'visible'
+            },
+            '.flipOutX': {
+                animationName: 'flipOutX',
+                backfaceVisibility: 'visible'
+            },
+            '.rotateIn': {
+                animationName: 'rotateIn',
+            },
+            '.rotateInDownLeft': {
+                animationName: 'rotateInDownLeft',
+            },
+            '.rotateInDownRight': {
+                animationName: 'rotateInDownRight',
+            },
+            '.rotateInUpLeft': {
+                animationName: 'rotateInUpLeft',
+            },
+            '.rotateInUpRight': {
+                animationName: 'rotateInUpRight',
+            },
+            '.rotateOut': {
+                animationName: 'rotateOut',
+            },
+            '.rotateOutDownLeft': {
+                animationName: 'rotateOutDownLeft',
+            },
+            '.rotateOutDownRight': {
+                animationName: 'rotateOutDownRight',
+            },
+            '.rotateOutUpLeft': {
+                animationName: 'rotateOutUpLeft',
+            },
+            '.rotateOutUpRight': {
+                animationName: 'rotateOutUpRight',
+            },
             '@keyframes bounce': keyframes.keyframeBounce,
             '@keyframes flash': keyframes.keyframeFlash,
             '@keyframes pulse': keyframes.keyframePulse,
@@ -68,7 +124,24 @@ module.exports = function () {
             '@keyframes jello': keyframes.keyframeJello,
             '@keyframes heartBeat': keyframes.keyframeHeartBeat,
             '@keyframes hinge': keyframes.keyframeHinge,
-            '@keyframes jackInTheBox': keyframes.keyframeJackInTheBox
+            '@keyframes jackInTheBox': keyframes.keyframeJackInTheBox,
+            '@keyframes lightSpeedIn': keyframesLightSpeed.keyframeLightSpeedIn,
+            '@keyframes lightSpeedOut': keyframesLightSpeed.keyframeLightSpeedOut,
+            '@keyframes flip': keyframesFlip.keyframeFlip,
+            '@keyframes flipInX': keyframesFlip.keyframeFlipInX,
+            '@keyframes flipInY': keyframesFlip.keyframeFlipInY,
+            '@keyframes flipOutX': keyframesFlip.keyframeFlipOutX,
+            '@keyframes flipOutY': keyframesFlip.keyframeFlipOutY,
+            '@keyframes rotateIn': keyframesRotateIn.keyframeRotateIn,
+            '@keyframes rotateInDownLeft': keyframesRotateIn.keyframeRotateInDownLeft,
+            '@keyframes rotateInDownRight': keyframesRotateIn.keyframeRotateInDownRight,
+            '@keyframes rotateInUpLeft': keyframesRotateIn.keyframeRotateInUpLeft,
+            '@keyframes rotateInUpRight': keyframesRotateIn.keyframeRotateInUpRight,
+            '@keyframes rotateOut': keyframesRotateOut.keyframeRotateOut,
+            '@keyframes rotateOutDownLeft': keyframesRotateOut.keyframeRotateOutDownLeft,
+            '@keyframes rotateOutDownRight': keyframesRotateOut.keyframeRotateOutDownRight,
+            '@keyframes rotateOutUpLeft': keyframesRotateOut.keyframeRotateOutUpLeft,
+            '@keyframes rotateOutUpRight': keyframesRotateOut.keyframeRotateOutUpRight,
         })
     };
 };
