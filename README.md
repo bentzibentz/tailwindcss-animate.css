@@ -27,7 +27,7 @@ plugins: [
 
 The plugin generates all the animate.css utility classes for you.
 
-### Available Naimate CSS classes
+### Available Animate CSS classes
 * .animated
 * .infinite
 * .bounce
@@ -61,6 +61,7 @@ The plugin generates all the animate.css utility classes for you.
 * .rotateOutUpLeft
 * .rotateOutUpRight
 
+More classes coming soon…
 
 ## Credits
 
