@@ -4,6 +4,7 @@ const keyframesFlip = require('./keyframes/flip');
 const keyframesRotateIn = require('./keyframes/rotateIn');
 const keyframesRotateOut = require('./keyframes/rotateOut');
 const keyframesRoll = require('./keyframes/roll');
+const keyframesZoomIn = require('./keyframes/zoomIn');
 
 module.exports = function () {
     return function ({ addUtilities }) {
@@ -119,6 +120,21 @@ module.exports = function () {
             '.rollOut': {
                 animationName: 'rollOut',
             },
+            '.zoomIn': {
+                animationName: 'zoomIn',
+            },
+            '.zoomInDown': {
+                animationName: 'zoomInDown',
+            },
+            '.zoomInLeft': {
+                animationName: 'zoomInLeft',
+            },
+            '.zoomInRight': {
+                animationName: 'zoomInRight',
+            },
+            '.zoomInUp': {
+                animationName: 'zoomInUp',
+            },
             '@keyframes bounce': keyframes.keyframeBounce,
             '@keyframes flash': keyframes.keyframeFlash,
             '@keyframes pulse': keyframes.keyframePulse,
@@ -151,6 +167,11 @@ module.exports = function () {
             '@keyframes rotateOutUpRight': keyframesRotateOut.keyframeRotateOutUpRight,
             '@keyframes rollIn': keyframesRoll.keyframeRollIn,
             '@keyframes rollOut': keyframesRoll.keyframeRollOut,
+            '@keyframes zoomIn': keyframesZoomIn.keyframeZoomIn,
+            '@keyframes zoomInDown': keyframesZoomIn.keyframeZoomInDown,
+            '@keyframes zoomInLeft': keyframesZoomIn.keyframeZoomInLeft,
+            '@keyframes zoomInRight': keyframesZoomIn.keyframeZoomInRight,
+            '@keyframes zoomInUp': keyframesZoomIn.keyframeZoomInUp,
         })
     };
 };

@@ -60,6 +60,13 @@ The plugin generates all the animate.css utility classes for you.
 * .rotateOutDownRight
 * .rotateOutUpLeft
 * .rotateOutUpRight
+* .rollIn
+* .rollOut
+* .zoomIn
+* .zoomInUp
+* .zoomInDown
+* .zoomInLeft
+* .zoomInRight
 
 More classes coming soon…
 
