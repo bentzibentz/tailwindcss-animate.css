@@ -67,6 +67,17 @@ The plugin generates all the animate.css utility classes for you.
 * .zoomInDown
 * .zoomInLeft
 * .zoomInRight
+* .bounceIn
+* .bounceInDown
+* .bounceInUp
+* .bounceInLeft
+* .bounceInRight
+* .bounceOut
+* .bounceOutDown
+* .bounceOutUp
+* .bounceOutLeft
+* .bounceOutRight
+* …
 
 More classes coming soon…
 
