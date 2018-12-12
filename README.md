@@ -21,7 +21,7 @@ Usage description coming soon…
 ```js
 plugins: [
   // Other plugins
-  require('tailwindcss-animatecss'),
+  require('tailwindcss-animatecss')(['responsive']),
 ]
 ```
 
