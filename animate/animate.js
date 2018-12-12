@@ -9,7 +9,7 @@ const keyframesZoomOut = require('./keyframes/zoomOut');
 const keyframesBounceIn = require('./keyframes/bounceIn');
 const keyframesBounceOut = require('./keyframes/bounceOut');
 
-module.exports = function () {
+module.exports = function (variants) {
     return function ({ addUtilities }) {
 
         addUtilities({
@@ -237,6 +237,6 @@ module.exports = function () {
             '@keyframes zoomOutLeft': keyframesZoomOut.keyframeZoomOutLeft,
             '@keyframes zoomOutRight': keyframesZoomOut.keyframeZoomOutRight,
             '@keyframes zoomOutUp': keyframesZoomOut.keyframeZoomOutUp
-        })
+        }, variants)
     };
 };
