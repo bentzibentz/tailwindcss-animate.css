@@ -79,6 +79,14 @@ The plugin generates all the animate.css utility classes for you.
 * .bounceOutUp
 * .bounceOutLeft
 * .bounceOutRight
+* .slideInDown
+*	.slideInLeft
+* .slideInRight
+* .slideInUp
+* .slideOutDown
+* .slideOutLeft
+* .slideOutRight
+* .slideOutUp
 * …
 
 More classes coming soon…

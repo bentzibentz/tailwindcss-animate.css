@@ -8,6 +8,8 @@ const keyframesZoomIn = require('./keyframes/zoomIn');
 const keyframesZoomOut = require('./keyframes/zoomOut');
 const keyframesBounceIn = require('./keyframes/bounceIn');
 const keyframesBounceOut = require('./keyframes/bounceOut');
+const keyframesSlideIn = require('./keyframes/slideIn');
+const keyframesSlideOut = require('./keyframes/slideOut');
 
 module.exports = function (variants) {
     return function ({ addUtilities }) {
@@ -185,6 +187,30 @@ module.exports = function (variants) {
             '.zoomOutUp': {
                 animationName: 'zoomOutUp',
             },
+            '.slideInDown': {
+                animationName: 'slideInDown'
+            },
+            '.slideInLeft': {
+                animationName: 'slideInLeft'
+            },
+            '.slideInRight': {
+                animationName: 'slideInRight'
+            },
+            '.slideInUp': {
+                animationName: 'slideInUp'
+            },
+            '.slideOutDown': {
+                animationName: 'slideOutDown'
+            },
+            '.slideOutLeft': {
+                animationName: 'slideOutLeft'
+            },
+            '.slideOutRight': {
+                animationName: 'slideOutRight'
+            },
+            '.slideOutUp': {
+                animationName: 'slideOutUp'
+            },
             '@keyframes bounce': keyframes.keyframeBounce,
             '@keyframes flash': keyframes.keyframeFlash,
             '@keyframes pulse': keyframes.keyframePulse,
@@ -236,7 +262,15 @@ module.exports = function (variants) {
             '@keyframes zoomOutDown': keyframesZoomOut.keyframeZoomOutDown,
             '@keyframes zoomOutLeft': keyframesZoomOut.keyframeZoomOutLeft,
             '@keyframes zoomOutRight': keyframesZoomOut.keyframeZoomOutRight,
-            '@keyframes zoomOutUp': keyframesZoomOut.keyframeZoomOutUp
+            '@keyframes zoomOutUp': keyframesZoomOut.keyframeZoomOutUp,
+            '@keyframes slideInDown': keyframesSlideIn.keyframeSlideInDown,
+            '@keyframes slideInLeft': keyframesSlideIn.keyframeSlideInLeft,
+            '@keyframes slideInRight': keyframesSlideIn.keyframeSlideInRight,
+            '@keyframes slideInUp': keyframesSlideIn.keyframeSlideInUp,
+            '@keyframes slideOutDown': keyframesSlideOut.keyframeSlideOutDown,
+            '@keyframes slideOutLeft': keyframesSlideOut.keyframeSlideOutLeft,
+            '@keyframes slideOutRight': keyframesSlideOut.keyframeSlideOutRight,
+            '@keyframes slideOutUp': keyframesSlideOut.keyframeSlideOutUp
         }, variants)
     };
 };
