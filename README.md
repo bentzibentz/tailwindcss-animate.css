@@ -16,7 +16,9 @@ yarn add tailwindcss-animatecss
 
 ## Usage
 
-Usage description coming soon…
+Add Tailwind CSS to your project as described [here](https://tailwindcss.com/docs/installation).
+
+Add plugin to your tailwind config file.
 
 ```js
 plugins: [
