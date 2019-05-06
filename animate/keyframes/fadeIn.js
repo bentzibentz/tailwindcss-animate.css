@@ -1,20 +1,99 @@
-const keyframeFadeIn = {};
+const keyframeFadeIn = {
+    'from': {
+        opacity: '0'
+    },
+    'to': {
+        opacity: '1'
+    },
+};
 
-const keyframeFadeInDown = {};
+const keyframeFadeInDown = {
+    'from': {
+        opacity: '0',
+        transform: 'translate3d(0, -100%, 0)'
+    },
+    'to': {
+        opacity: '1',
+        transform: 'translate3d(0, 0, 0)'
+    },
+};
 
-const keyframeFadeInDownBig = {};
+const keyframeFadeInDownBig = {
+    'from': {
+        opacity: '0',
+        transform: 'translate3d(0, -2000px, 0)'
+    },
+    'to': {
+        opacity: '1',
+        transform: 'translate3d(0, 0, 0)'
+    },
+};
 
-const keyframeFadeInLeft = {};
+const keyframeFadeInLeft = {
+    'from': {
+        opacity: '0',
+        transform: 'translate3d(-100%, 0, 0)'
+    },
+    'to': {
+        opacity: '1',
+        transform: 'translate3d(0, 0, 0)'
+    },
+};
 
-const keyframeFadeInLeftBig = {};
+const keyframeFadeInLeftBig = {
+    'from': {
+        opacity: '0',
+        transform: 'translate3d(-2000px, 0, 0)'
+    },
+    'to': {
+        opacity: '1',
+        transform: 'translate3d(0, 0, 0)'
+    },
+};
 
-const keyframeFadeInRight = {};
+const keyframeFadeInRight = {
+    'from': {
+        opacity: '0',
+        transform: 'translate3d(100%, 0, 0)'
+    },
+    'to': {
+        opacity: '1',
+        transform: 'translate3d(0, 0, 0)'
+    },
+};
 
-const keyframeFadeInRightBig = {};
+const keyframeFadeInRightBig = {
+    'from': {
+        opacity: '0',
+        transform: 'translate3d(2000px, 0, 0)'
+    },
+    'to': {
+        opacity: '1',
+        transform: 'translate3d(0, 0, 0)'
+    },
+};
 
-const keyframeFadeInUp = {};
+const keyframeFadeInUp = {
+    'from': {
+        opacity: '0',
+        transform: 'translate3d(0, -100%, 0)'
+    },
+    'to': {
+        opacity: '1',
+        transform: 'translate3d(0, 0, 0)'
+    },
+};
 
-const keyframeFadeInUpBig = {};
+const keyframeFadeInUpBig = {
+    'from': {
+        opacity: '0',
+        transform: 'translate3d(0, 2000px, 0)'
+    },
+    'to': {
+        opacity: '1',
+        transform: 'translate3d(0, 0, 0)'
+    },
+};
 
 exports.keyframeFadeIn = keyframeFadeIn;
 exports.keyframeFadeInDown = keyframeFadeInDown;

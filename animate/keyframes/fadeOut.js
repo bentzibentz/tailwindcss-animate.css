@@ -1,20 +1,94 @@
-const keyframeFadeOut = {};
+const keyframeFadeOut = {
+    'from': {
+        opacity: '1'
+    },
+    'to': {
+        opacity: '0'
+    },
+};
 
-const keyframeFadeOutDown = {};
+const keyframeFadeOutDown = {
+    'from': {
+        opacity: '1'
+    },
+    'to': {
+        opacity: '0',
+        transform: 'translate3d(0, 100%, 0)'
+    },
+};
 
-const keyframeFadeOutDownBig = {};
+const keyframeFadeOutDownBig = {
+    'from': {
+        opacity: '1'
+    },
+    'to': {
+        opacity: '0',
+        transform: 'translate3d(0, 2000px, 0)'
+    },
+};
 
-const keyframeFadeOutLeft = {};
+const keyframeFadeOutLeft = {
+    'from': {
+        opacity: '1'
+    },
+    'to': {
+        opacity: '0',
+        transform: 'translate3d(-100%, 0, 0)'
+    },
+};
 
-const keyframeFadeOutLeftBig = {};
+const keyframeFadeOutLeftBig = {
+    'from': {
+        opacity: '1'
+        
+    },
+    'to': {
+        opacity: '0',
+        transform: 'translate3d(-2000px, 0, 0)'
+    },
+};
 
-const keyframeFadeOutRight = {};
+const keyframeFadeOutRight = {
+    'from': {
+        opacity: '1'
+    },
+    'to': {
+        opacity: '0',
+        transform: 'translate3d(100%, 0, 0)'
+    },
+};
 
-const keyframeFadeOutRightBig = {};
+const keyframeFadeOutRightBig = {
+    'from': {
+        opacity: '1'
+        
+    },
+    'to': {
+        opacity: '0',
+        transform: 'translate3d(2000px, 0, 0)'
+    },
+};
 
-const keyframeFadeOutUp = {};
+const keyframeFadeOutUp = {
+    'from': {
+        opacity: '1'
+    },
+    'to': {
+        opacity: '0',
+        transform: 'translate3d(0, -100%, 0)'
+    },
+};
 
-const keyframeFadeOutUpBig = {};
+const keyframeFadeOutUpBig = {
+    'from': {
+        opacity: '1'
+        
+    },
+    'to': {
+        opacity: '0',
+        transform: 'translate3d(0, -2000px, 0)'
+    },
+};
 
 exports.keyframeFadeOut = keyframeFadeOut;
 exports.keyframeFadeOutDown = keyframeFadeOutDown;

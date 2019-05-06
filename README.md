@@ -87,6 +87,24 @@ The plugin generates all the animate.css utility classes for you.
 * .slideOutLeft
 * .slideOutRight
 * .slideOutUp
+* .fadeIn
+* .fadeInDown
+* .fadeInDownBig
+* .fadeInLeft
+* .fadeInLeftBig
+* .fadeInRight
+* .fadeInRightBig
+* .fadeInUp
+* .fadeInUpBig
+* .fadeOut
+* .fadeOutDown
+* .fadeOutDownBig
+* .fadeOutLeft
+* .fadeOutLeftBig
+* .fadeOutRight
+* .fadeOutRightBig
+* .fadeOutUp
+* .fadeOutUpBig
 * …
 
 More classes coming soon…
