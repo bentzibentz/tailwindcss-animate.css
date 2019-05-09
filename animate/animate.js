@@ -10,6 +10,8 @@ const keyframesBounceIn = require('./keyframes/bounceIn');
 const keyframesBounceOut = require('./keyframes/bounceOut');
 const keyframesSlideIn = require('./keyframes/slideIn');
 const keyframesSlideOut = require('./keyframes/slideOut');
+const keyframesFadeIn = require('./keyframes/fadeIn');
+const keyframesFadeOut = require('./keyframes/fadeOut');
 
 module.exports = function (variants) {
     return function ({ addUtilities }) {
@@ -211,6 +213,60 @@ module.exports = function (variants) {
             '.slideOutUp': {
                 animationName: 'slideOutUp'
             },
+            '.fadeIn': {
+                animationName: 'fadeIn'
+            },
+            '.fadeInDown': {
+                animationName: 'fadeInDown'
+            },
+            '.fadeInDownBig': {
+                animationName: 'fadeInDownBig'
+            },
+            '.fadeInLeft': {
+                animationName: 'fadeInLeft'
+            },
+            '.fadeInLeftBig': {
+                animationName: 'fadeInLeftBig'
+            },
+            '.fadeInRight': {
+                animationName: 'fadeInRight'
+            },
+            '.fadeInRightBig': {
+                animationName: 'fadeInRightBig'
+            },
+            '.fadeInUp': {
+                animationName: 'fadeInUp'
+            },
+            '.fadeInUpBig': {
+                animationName: 'fadeInUpBig'
+            },
+            '.fadeOut': {
+                animationName: 'fadeOut'
+            },
+            '.fadeOutDown': {
+                animationName: 'fadeOutDown'
+            },
+            '.fadeOutDownBig': {
+                animationName: 'fadeOutDownBig'
+            },
+            '.fadeOutLeft': {
+                animationName: 'fadeOutLeft'
+            },
+            '.fadeOutLeftBig': {
+                animationName: 'fadeOutLeftBig'
+            },
+            '.fadeOutRight': {
+                animationName: 'fadeOutRight'
+            },
+            '.fadeOutRightBig': {
+                animationName: 'fadeOutRightBig'
+            },
+            '.fadeOutUp': {
+                animationName: 'fadeOutUp'
+            },
+            '.fadeOutUpBig': {
+                animationName: 'fadeOutUpBig'
+            },
             '@keyframes bounce': keyframes.keyframeBounce,
             '@keyframes flash': keyframes.keyframeFlash,
             '@keyframes pulse': keyframes.keyframePulse,
@@ -270,7 +326,25 @@ module.exports = function (variants) {
             '@keyframes slideOutDown': keyframesSlideOut.keyframeSlideOutDown,
             '@keyframes slideOutLeft': keyframesSlideOut.keyframeSlideOutLeft,
             '@keyframes slideOutRight': keyframesSlideOut.keyframeSlideOutRight,
-            '@keyframes slideOutUp': keyframesSlideOut.keyframeSlideOutUp
+            '@keyframes slideOutUp': keyframesSlideOut.keyframeSlideOutUp,
+            '@keyframes fadeIn': keyframesFadeIn.keyframeFadeIn,
+            '@keyframes fadeInDown': keyframesFadeIn.keyframeFadeInDown,
+            '@keyframes fadeInDownBig': keyframesFadeIn.keyframeFadeInDownBig,
+            '@keyframes fadeInLeft': keyframesFadeIn.keyframeFadeInLeft,
+            '@keyframes fadeInLeftBig': keyframesFadeIn.keyframeFadeInLeftBig,
+            '@keyframes fadeInRight': keyframesFadeIn.keyframeFadeInRight,
+            '@keyframes fadeInRightBig': keyframesFadeIn.keyframeFadeInRightBig,
+            '@keyframes fadeInUp': keyframesFadeIn.keyframeFadeInUp,
+            '@keyframes fadeInUpBig': keyframesFadeIn.keyframeFadeInUpBig,
+            '@keyframes fadeOut': keyframesFadeOut.keyframeFadeOut,
+            '@keyframes fadeOutDown': keyframesFadeOut.keyframeFadeOutDown,
+            '@keyframes fadeOutDownBig': keyframesFadeOut.keyframeFadeOutDownBig,
+            '@keyframes fadeOutLeft': keyframesFadeOut.keyframeFadeOutLeft,
+            '@keyframes fadeOutLeftBig': keyframesFadeOut.keyframeFadeOutLeftBig,
+            '@keyframes fadeOutRight': keyframesFadeOut.keyframeFadeOutRight,
+            '@keyframes fadeOutRightBig': keyframesFadeOut.keyframeFadeOutRightBig,
+            '@keyframes fadeOutUp': keyframesFadeOut.keyframeFadeOutUp,
+            '@keyframes fadeOutUpBig': keyframesFadeOut.keyframeFadeOutUpBig
         }, variants)
     };
 };
