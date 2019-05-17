@@ -1,6 +1,8 @@
 # Animate CSS - Tailwind CSS Plugin
 Add [Animate CSS](https://github.com/daneden/animate.css) as [Tailwind CSS](https://github.com/tailwindcss/tailwindcss) plugin to your project.
 
+Note: This plugin is not tailwind 1.0 ready, but will be soon ;)
+
 
 ## Installation
 
