@@ -152,7 +152,7 @@ module.exports = function (settings = {}, variants = ['responsive']) {
             },
             '.bounceIn': {
                 animationName: 'bounceIn',
-                animationDuration: '0.75s'
+                animationDuration: `${bounceInSpeed}ms`,
             },
             '.bounceInDown': {
                 animationName: 'bounceInDown',
