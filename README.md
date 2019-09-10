@@ -121,9 +121,11 @@ The plugin generates all the animate.css utility classes for you.
 * .fadeOutRightBig
 * .fadeOutUp
 * .fadeOutUpBig
-* …
-
-More classes coming soon…
+* .zoomOutDown
+* .zoomOutLeft
+* .zoomOutRight
+* .zoomOut
+* .zoomOutUp
 
 ## Credits
 
