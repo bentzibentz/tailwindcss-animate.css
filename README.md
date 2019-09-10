@@ -16,15 +16,32 @@ yarn add tailwindcss-animatecss
 ## Usage
 
 Add Tailwind CSS to your project as described [here](https://tailwindcss.com/docs/installation).
-
-Add plugin to your tailwind config file.
+Install tailwindcss plugin as described above and add it to your tailwind.config.js file. 
 
 ```js
 plugins: [
   // Other plugins
-  require('tailwindcss-animatecss')(['responsive']),
+  require('tailwindcss-animatecss')({
+        settings: {
+          animatedSpeed: 1000,
+          heartBeatSpeed: 1000,
+          hingeSpeed: 2000,
+          bounceInSpeed: 750,
+          bounceOutSpeed: 750
+        },
+        variants: ['responsive'],
+      }),
 ]
 ```
+
+### Adjustable, optional settings
+* ```animatedSpeed``` used for the animationDuration of the .animated class
+* ```heartBeat``` used for the animationDuration of the .heartBeat class
+* ```hingeSpeed``` used for the animationDuration of the .hingeSpeed class
+* ```bounceInSpeed``` used for the animationDuration of the .bounceInSpeed class
+* ```bounceOutSpeed``` used for the animationDuration of the .bounceOutSpeed class
+
+All of these settings are optional, if not set basic animate.css fallback animationDuration speed is used.
 
 The plugin generates all the animate.css utility classes for you.
 
@@ -79,7 +96,7 @@ The plugin generates all the animate.css utility classes for you.
 * .bounceOutLeft
 * .bounceOutRight
 * .slideInDown
-*	.slideInLeft
+* .slideInLeft
 * .slideInRight
 * .slideInUp
 * .slideOutDown

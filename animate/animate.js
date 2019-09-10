@@ -13,12 +13,20 @@ const keyframesSlideOut = require('./keyframes/slideOut');
 const keyframesFadeIn = require('./keyframes/fadeIn');
 const keyframesFadeOut = require('./keyframes/fadeOut');
 
-module.exports = function () {
-    return function ({ addUtilities, variants }) {
+module.exports = function (settings = {}, variants = ['responsive']) {
+    return function ({ e, addUtilities, variants }) {
+
+        // set fallback if speed not defined
+        const animatedSpeed = settings.settings.animatedSpeed ? settings.settings.animatedSpeed : 1000;
+        const heartBeatSpeed = settings.settings.heartBeatSpeed ? settings.settings.heartBeatSpeed : 1000;
+        const hingeSpeed = settings.settings.hingeSpeed ? settings.settings.hingeSpeed : 2000;
+        const bounceInSpeed = settings.settings.bounceInSpeed ? settings.settings.bounceInSpeed : 750;
+        const bounceOutSpeed = settings.settings.bounceOutSpeed ? settings.settings.bounceOutSpeed : 750;
+        const opacity = settings.settings.opacity ? settings.settings.opacity : 1;
 
         addUtilities({
             '.animated': {
-                animationDuration: '1s',
+                animationDuration: `${animatedSpeed}ms`,
                 animationFillMode: 'both'
             },
             '.infinite': {
@@ -59,12 +67,12 @@ module.exports = function () {
             },
             '.heartBeat': {
                 animationName: 'heartBeat',
-                animationDuration: '1s',
+                animationDuration: `${heartBeatSpeed}ms`,
                 animationTimingFunction: 'ease-in-out'
             },
             '.hinge': {
                 animationName: 'hinge',
-                animationDuration: '2s',
+                animationDuration: `${hingeSpeed}ms`,
             },
             '.jackInTheBox': {
                 animationName: 'jackInTheBox',
@@ -160,7 +168,7 @@ module.exports = function () {
             },
             '.bounceOut': {
                 animationName: 'bounceOut',
-                animationDuration: '0.75s'
+                animationDuration: `${bounceOutSpeed}ms`,
             },
             '.bounceOutDown': {
                 animationName: 'bounceOutDown',
