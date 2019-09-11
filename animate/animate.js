@@ -275,6 +275,9 @@ module.exports = function (settings = {}, variants = ['responsive']) {
             '.fadeOutUpBig': {
                 animationName: 'fadeOutUpBig'
             },
+        }, variants(variants));
+
+        addUtilities({
             '@keyframes bounce': keyframes.keyframeBounce,
             '@keyframes flash': keyframes.keyframeFlash,
             '@keyframes pulse': keyframes.keyframePulse,
@@ -353,6 +356,6 @@ module.exports = function (settings = {}, variants = ['responsive']) {
             '@keyframes fadeOutRightBig': keyframesFadeOut.keyframeFadeOutRightBig,
             '@keyframes fadeOutUp': keyframesFadeOut.keyframeFadeOutUp,
             '@keyframes fadeOutUpBig': keyframesFadeOut.keyframeFadeOutUpBig
-        }, variants(variants))
+        });
     };
 };
