@@ -14,7 +14,7 @@ const keyframesFadeIn = require('./keyframes/fadeIn');
 const keyframesFadeOut = require('./keyframes/fadeOut');
 
 module.exports = function (settings = {}, variants = ['responsive']) {
-    return function ({ e, addUtilities, variants }) {
+    return function ({ e, addUtilities }) {
 
         // set fallback if speed not defined
         const animatedSpeed = settings.settings.animatedSpeed ? settings.settings.animatedSpeed : 1000;
@@ -275,7 +275,7 @@ module.exports = function (settings = {}, variants = ['responsive']) {
             '.fadeOutUpBig': {
                 animationName: 'fadeOutUpBig'
             },
-        }, variants(variants));
+        }, variants);
 
         addUtilities({
             '@keyframes bounce': keyframes.keyframeBounce,
