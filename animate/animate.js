@@ -13,16 +13,16 @@ const keyframesSlideOut = require('./keyframes/slideOut');
 const keyframesFadeIn = require('./keyframes/fadeIn');
 const keyframesFadeOut = require('./keyframes/fadeOut');
 
-module.exports = function (settings = {}, variants = ['responsive']) {
-    return function ({ e, addUtilities, variants }) {
+module.exports = function ({ settings = {}, variants = ['responsive'] }) {
+    return function ({ e, addUtilities }) {
 
         // set fallback if speed not defined
-        const animatedSpeed = settings.settings.animatedSpeed ? settings.settings.animatedSpeed : 1000;
-        const heartBeatSpeed = settings.settings.heartBeatSpeed ? settings.settings.heartBeatSpeed : 1000;
-        const hingeSpeed = settings.settings.hingeSpeed ? settings.settings.hingeSpeed : 2000;
-        const bounceInSpeed = settings.settings.bounceInSpeed ? settings.settings.bounceInSpeed : 750;
-        const bounceOutSpeed = settings.settings.bounceOutSpeed ? settings.settings.bounceOutSpeed : 750;
-        const opacity = settings.settings.opacity ? settings.settings.opacity : 1;
+        const animatedSpeed = settings.animatedSpeed ? settings.animatedSpeed : 1000;
+        const heartBeatSpeed = settings.heartBeatSpeed ? settings.heartBeatSpeed : 1000;
+        const hingeSpeed = settings.hingeSpeed ? settings.hingeSpeed : 2000;
+        const bounceInSpeed = settings.bounceInSpeed ? settings.bounceInSpeed : 750;
+        const bounceOutSpeed = settings.bounceOutSpeed ? settings.bounceOutSpeed : 750;
+        const opacity = settings.opacity ? settings.opacity : 1;
 
         addUtilities({
             '.animated': {
@@ -275,6 +275,9 @@ module.exports = function (settings = {}, variants = ['responsive']) {
             '.fadeOutUpBig': {
                 animationName: 'fadeOutUpBig'
             },
+        }, variants);
+
+        addUtilities({
             '@keyframes bounce': keyframes.keyframeBounce,
             '@keyframes flash': keyframes.keyframeFlash,
             '@keyframes pulse': keyframes.keyframePulse,
@@ -353,6 +356,6 @@ module.exports = function (settings = {}, variants = ['responsive']) {
             '@keyframes fadeOutRightBig': keyframesFadeOut.keyframeFadeOutRightBig,
             '@keyframes fadeOutUp': keyframesFadeOut.keyframeFadeOutUp,
             '@keyframes fadeOutUpBig': keyframesFadeOut.keyframeFadeOutUpBig
-        }, variants(variants))
+        });
     };
 };
