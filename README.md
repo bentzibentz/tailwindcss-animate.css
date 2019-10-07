@@ -41,7 +41,7 @@ plugins: [
 * ```hingeSpeed``` used for the animationDuration of the .hingeSpeed class
 * ```bounceInSpeed``` used for the animationDuration of the .bounceInSpeed class
 * ```bounceOutSpeed``` used for the animationDuration of the .bounceOutSpeed class
-* ```animationDeplaySpeed``` used for the animationDeplay, just add .delay class to your element
+* ```animationDelaySpeed``` used for the animationDelaySpeed, just add .delay class to your element
 
 All of these settings are optional, if not set basic animate.css fallback animationDuration speed is used.
 

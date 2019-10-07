@@ -22,7 +22,7 @@ module.exports = function ({ settings = {}, variants = ['responsive'] }) {
         const hingeSpeed = settings.hingeSpeed ? settings.hingeSpeed : 2000;
         const bounceInSpeed = settings.bounceInSpeed ? settings.bounceInSpeed : 750;
         const bounceOutSpeed = settings.bounceOutSpeed ? settings.bounceOutSpeed : 750;
-        const animationDeplaySpeed = settings.animationDeplaySpeed ? settings.animationDeplaySpeed : 500;
+        const animationDelaySpeed = settings.animationDelaySpeed ? settings.animationDelaySpeed : 500;
         const opacity = settings.opacity ? settings.opacity : 1;
 
         addUtilities({
@@ -34,7 +34,7 @@ module.exports = function ({ settings = {}, variants = ['responsive'] }) {
                 animationIterationCount: 'infinite'
             },
             '.delay': {
-                animationDelay: `${animationDeplaySpeed}ms`
+                animationDelay: `${animationDelaySpeed}ms`
             },
             '.delay-1s': {
                 animationDelay: `1000ms`
