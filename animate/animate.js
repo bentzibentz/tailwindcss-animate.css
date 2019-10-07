@@ -22,6 +22,7 @@ module.exports = function ({ settings = {}, variants = ['responsive'] }) {
         const hingeSpeed = settings.hingeSpeed ? settings.hingeSpeed : 2000;
         const bounceInSpeed = settings.bounceInSpeed ? settings.bounceInSpeed : 750;
         const bounceOutSpeed = settings.bounceOutSpeed ? settings.bounceOutSpeed : 750;
+        const animationDeplaySpeed = settings.animationDeplaySpeed ? settings.animationDeplaySpeed : 500;
         const opacity = settings.opacity ? settings.opacity : 1;
 
         addUtilities({
@@ -31,6 +32,36 @@ module.exports = function ({ settings = {}, variants = ['responsive'] }) {
             },
             '.infinite': {
                 animationIterationCount: 'infinite'
+            },
+            '.delay': {
+                animationDelay: `${animationDeplaySpeed}ms`
+            },
+            '.delay-1s': {
+                animationDelay: `1000ms`
+            },
+            '.delay-2s': {
+                animationDelay: `2000ms`
+            },
+            '.delay-3s': {
+                animationDelay: `3000ms`
+            },
+            '.delay-4s': {
+                animationDelay: `4000ms`
+            },
+            '.delay-5s': {
+                animationDelay: `5000ms`
+            },
+            '.fast': {
+                animationDelay: `800ms`
+            },
+            '.faster': {
+                animationDelay: `500ms`
+            },
+            '.slow': {
+                animationDelay: `2000ms`
+            },
+            '.slower': {
+                animationDelay: `3000ms`
             },
             '.bounce': {
                 animationName: 'bounce',

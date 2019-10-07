@@ -27,7 +27,8 @@ plugins: [
           heartBeatSpeed: 1000,
           hingeSpeed: 2000,
           bounceInSpeed: 750,
-          bounceOutSpeed: 750
+          bounceOutSpeed: 750,
+          animationDeplaySpeed: 1000
         },
         variants: ['responsive'],
       }),
@@ -40,6 +41,7 @@ plugins: [
 * ```hingeSpeed``` used for the animationDuration of the .hingeSpeed class
 * ```bounceInSpeed``` used for the animationDuration of the .bounceInSpeed class
 * ```bounceOutSpeed``` used for the animationDuration of the .bounceOutSpeed class
+* ```animationDeplaySpeed``` used for the animationDeplay, just add .delay class to your element
 
 All of these settings are optional, if not set basic animate.css fallback animationDuration speed is used.
 
@@ -48,6 +50,16 @@ The plugin generates all the animate.css utility classes for you.
 ### Available Animate CSS classes
 * .animated
 * .infinite
+* .delay
+* .delay-1
+* .delay-2
+* .delay-3
+* .delay-4
+* .delay-5
+* .fast
+* .faster
+* .slow
+* .slower
 * .bounce
 * .flash
 * .pulse
