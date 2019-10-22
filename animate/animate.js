@@ -52,16 +52,16 @@ module.exports = function ({ settings = {}, variants = ['responsive'] }) {
                 animationDelay: `5000ms`
             },
             '.fast': {
-                animationDelay: `800ms`
+                animationDuration: `800ms`
             },
             '.faster': {
-                animationDelay: `500ms`
+                animationDuration: `500ms`
             },
             '.slow': {
-                animationDelay: `2000ms`
+                animationDuration: `2000ms`
             },
             '.slower': {
-                animationDelay: `3000ms`
+                animationDuration: `3000ms`
             },
             '.bounce': {
                 animationName: 'bounce',
