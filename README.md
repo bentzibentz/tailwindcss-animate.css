@@ -28,7 +28,7 @@ plugins: [
           hingeSpeed: 2000,
           bounceInSpeed: 750,
           bounceOutSpeed: 750,
-          animationDeplaySpeed: 1000
+          animationDelaySpeed: 1000
         },
         variants: ['responsive'],
       }),
