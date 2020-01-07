@@ -141,7 +141,7 @@ The plugin generates all the animate.css utility classes for you.
 
 ## Credits
 
-This package is based of [Animate.css](https://github.com/daneden/animate.css).
+This package is based on [Animate.css](https://github.com/daneden/animate.css).
 
 ## License
 
