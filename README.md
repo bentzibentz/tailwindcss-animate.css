@@ -143,6 +143,9 @@ The plugin generates all the animate.css utility classes for you.
 
 This package is based on [Animate.css](https://github.com/daneden/animate.css).
 
+## More Tailwind CSS Plugins
+[tailwindcss-absolute-center](https://github.com/bentzibentz/tailwindcss-absolute-center)
+
 ## License
 
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
