@@ -73,7 +73,7 @@ All of these settings are optional, if not set basic animate.css fallback animat
 
 The plugin generates all the animate.css utility classes for you.
 
-### Varinats
+### Variants
 Generating different class variants is super easy, just add the desired variant to the variants array at the plugin options.
 ```js
 plugins: [
