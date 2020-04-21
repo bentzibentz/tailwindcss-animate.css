@@ -1,3 +1,12 @@
+<p align="left">
+  <a href="https://github.com/bentzibentz/tailwindcss-animate.css/releases" target="_blank"><img alt="GitHub release" src="https://img.shields.io/github/v/release/bentzibentz/tailwindcss-animate.css?include_prereleases&style=flat-square"></a>
+  <a href="https://npmjs.com/package/tailwindcss-animatecss" target="_blank"><img alt="npm" src="https://img.shields.io/npm/v/tailwindcss-animatecss?style=flat-square"></a>
+  <a href="https://npmjs.com/package/tailwindcss-animatecss" target="_blank"><img alt="npm" src="https://img.shields.io/npm/dt/tailwindcss-animatecss?style=flat-square"></a>
+  <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/minzip/tailwindcss-animatecss?style=flat-square">
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/bentzibentz/tailwindcss-animate.css?style=flat-square">
+  <img alt="License" src=" https://img.shields.io/github/license/bentzibentz/tailwindcss-animate.css">
+</p>
+
 # Animate CSS - Tailwind CSS Plugin
 Add [Animate CSS](https://github.com/daneden/animate.css) as [Tailwind CSS](https://github.com/tailwindcss/tailwindcss) plugin to your project.
 
