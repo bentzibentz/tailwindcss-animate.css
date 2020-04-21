@@ -14,7 +14,7 @@ const keyframesFadeIn = require('./keyframes/fadeIn');
 const keyframesFadeOut = require('./keyframes/fadeOut');
 
 module.exports = function ({ classes = [], settings = {}, variants = ['responsive'] }) {
-    return function ({ e, addUtilities, prefix }) {
+    return function ({ e, addUtilities, prefix, addVariant, postcss }) {
 
         // set fallback if speed not defined
         const animatedSpeed = settings.animatedSpeed ? settings.animatedSpeed : 1000;
@@ -405,5 +405,14 @@ module.exports = function ({ classes = [], settings = {}, variants = ['responsiv
         addUtilities(utilities, { variants, respectImportant: false });
 
         addUtilities(keyFrames, { respectImportant: false });
+
+        addVariant('reduced-motion', ({ container, separator }) => {
+            const supportsRule = postcss.atRule({ name: 'media', params: '(prefers-reduced-motion: reduce)' })
+            supportsRule.append(container.nodes)
+            container.append(supportsRule)
+            supportsRule.walkRules(rule => {
+                rule.selector = `.${e(`reduced-motion${separator}${rule.selector.slice(1)}`)}`
+            })
+        })
     };
 };

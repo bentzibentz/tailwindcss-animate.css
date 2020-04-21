@@ -31,7 +31,7 @@ plugins: [
           bounceOutSpeed: 750,
           animationDelaySpeed: 1000
         },
-        variants: ['responsive'],
+        variants: ['responsive', 'hover', 'reduced-motion'],
       }),
 ]
 ```
@@ -72,6 +72,24 @@ module.exports = {
 All of these settings are optional, if not set basic animate.css fallback animationDuration speed is used.
 
 The plugin generates all the animate.css utility classes for you.
+
+### Varinats
+Generating different class variants is super easy, just add the desired variant to the variants array at the plugin options.
+```js
+plugins: [
+  // Other plugins
+  require('tailwindcss-animatecss')({
+        classes: [],
+        settings: {},
+        variants: ['responsive', 'hover', 'reduced-motion'],
+      }),
+]
+```
+#### Available variants
+* responsive
+* hover
+* reduced-motion [Read more](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion)
+
 
 ### Available Animate CSS classes
 * .animated
