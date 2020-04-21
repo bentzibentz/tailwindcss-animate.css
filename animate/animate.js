@@ -13,7 +13,7 @@ const keyframesSlideOut = require('./keyframes/slideOut');
 const keyframesFadeIn = require('./keyframes/fadeIn');
 const keyframesFadeOut = require('./keyframes/fadeOut');
 
-module.exports = function ({ settings = {}, variants = ['responsive'] }) {
+module.exports = function ({ classes = [], settings = {}, variants = ['responsive'] }) {
     return function ({ e, addUtilities, prefix }) {
 
         // set fallback if speed not defined
@@ -25,7 +25,88 @@ module.exports = function ({ settings = {}, variants = ['responsive'] }) {
         const animationDelaySpeed = settings.animationDelaySpeed ? settings.animationDelaySpeed : 500;
         const opacity = settings.opacity ? settings.opacity : 1;
 
-        addUtilities({
+        const fallbackKeyframes = {
+            '@keyframes bounce': keyframes.keyframeBounce,
+            '@keyframes flash': keyframes.keyframeFlash,
+            '@keyframes pulse': keyframes.keyframePulse,
+            '@keyframes rubberBand': keyframes.keyframeRubberBand,
+            '@keyframes shake': keyframes.keyframeShake,
+            '@keyframes headShake': keyframes.keyframeHeadShake,
+            '@keyframes swing': keyframes.keyframeSwing,
+            '@keyframes tada': keyframes.keyframeTada,
+            '@keyframes wobble': keyframes.keyframeWobble,
+            '@keyframes jello': keyframes.keyframeJello,
+            '@keyframes heartBeat': keyframes.keyframeHeartBeat,
+            '@keyframes hinge': keyframes.keyframeHinge,
+            '@keyframes jackInTheBox': keyframes.keyframeJackInTheBox,
+            '@keyframes lightSpeedIn': keyframesLightSpeed.keyframeLightSpeedIn,
+            '@keyframes lightSpeedOut': keyframesLightSpeed.keyframeLightSpeedOut,
+            '@keyframes flip': keyframesFlip.keyframeFlip,
+            '@keyframes flipInX': keyframesFlip.keyframeFlipInX,
+            '@keyframes flipInY': keyframesFlip.keyframeFlipInY,
+            '@keyframes flipOutX': keyframesFlip.keyframeFlipOutX,
+            '@keyframes flipOutY': keyframesFlip.keyframeFlipOutY,
+            '@keyframes rotateIn': keyframesRotateIn.keyframeRotateIn,
+            '@keyframes rotateInDownLeft': keyframesRotateIn.keyframeRotateInDownLeft,
+            '@keyframes rotateInDownRight': keyframesRotateIn.keyframeRotateInDownRight,
+            '@keyframes rotateInUpLeft': keyframesRotateIn.keyframeRotateInUpLeft,
+            '@keyframes rotateInUpRight': keyframesRotateIn.keyframeRotateInUpRight,
+            '@keyframes rotateOut': keyframesRotateOut.keyframeRotateOut,
+            '@keyframes rotateOutDownLeft': keyframesRotateOut.keyframeRotateOutDownLeft,
+            '@keyframes rotateOutDownRight': keyframesRotateOut.keyframeRotateOutDownRight,
+            '@keyframes rotateOutUpLeft': keyframesRotateOut.keyframeRotateOutUpLeft,
+            '@keyframes rotateOutUpRight': keyframesRotateOut.keyframeRotateOutUpRight,
+            '@keyframes rollIn': keyframesRoll.keyframeRollIn,
+            '@keyframes rollOut': keyframesRoll.keyframeRollOut,
+            '@keyframes zoomIn': keyframesZoomIn.keyframeZoomIn,
+            '@keyframes zoomInDown': keyframesZoomIn.keyframeZoomInDown,
+            '@keyframes zoomInLeft': keyframesZoomIn.keyframeZoomInLeft,
+            '@keyframes zoomInRight': keyframesZoomIn.keyframeZoomInRight,
+            '@keyframes zoomInUp': keyframesZoomIn.keyframeZoomInUp,
+            '@keyframes bounceIn': keyframesBounceIn.keyframeBounceIn,
+            '@keyframes bounceInDown': keyframesBounceIn.keyframeBounceInDown,
+            '@keyframes bounceInLeft': keyframesBounceIn.keyframeBounceInLeft,
+            '@keyframes bounceInRight': keyframesBounceIn.keyframeBounceInRight,
+            '@keyframes bounceInUp': keyframesBounceIn.keyframeBounceInUp,
+            '@keyframes bounceOut': keyframesBounceOut.keyframeBounceOut,
+            '@keyframes bounceOutDown': keyframesBounceOut.keyframeBounceOutDown,
+            '@keyframes bounceOutLeft': keyframesBounceOut.keyframeBounceOutLeft,
+            '@keyframes bounceOutRight': keyframesBounceOut.keyframeBounceOutRight,
+            '@keyframes bounceOutUp': keyframesBounceOut.keyframeBounceOutUp,
+            '@keyframes zoomOut': keyframesZoomOut.keyframeZoomOut,
+            '@keyframes zoomOutDown': keyframesZoomOut.keyframeZoomOutDown,
+            '@keyframes zoomOutLeft': keyframesZoomOut.keyframeZoomOutLeft,
+            '@keyframes zoomOutRight': keyframesZoomOut.keyframeZoomOutRight,
+            '@keyframes zoomOutUp': keyframesZoomOut.keyframeZoomOutUp,
+            '@keyframes slideInDown': keyframesSlideIn.keyframeSlideInDown,
+            '@keyframes slideInLeft': keyframesSlideIn.keyframeSlideInLeft,
+            '@keyframes slideInRight': keyframesSlideIn.keyframeSlideInRight,
+            '@keyframes slideInUp': keyframesSlideIn.keyframeSlideInUp,
+            '@keyframes slideOutDown': keyframesSlideOut.keyframeSlideOutDown,
+            '@keyframes slideOutLeft': keyframesSlideOut.keyframeSlideOutLeft,
+            '@keyframes slideOutRight': keyframesSlideOut.keyframeSlideOutRight,
+            '@keyframes slideOutUp': keyframesSlideOut.keyframeSlideOutUp,
+            '@keyframes fadeIn': keyframesFadeIn.keyframeFadeIn,
+            '@keyframes fadeInDown': keyframesFadeIn.keyframeFadeInDown,
+            '@keyframes fadeInDownBig': keyframesFadeIn.keyframeFadeInDownBig,
+            '@keyframes fadeInLeft': keyframesFadeIn.keyframeFadeInLeft,
+            '@keyframes fadeInLeftBig': keyframesFadeIn.keyframeFadeInLeftBig,
+            '@keyframes fadeInRight': keyframesFadeIn.keyframeFadeInRight,
+            '@keyframes fadeInRightBig': keyframesFadeIn.keyframeFadeInRightBig,
+            '@keyframes fadeInUp': keyframesFadeIn.keyframeFadeInUp,
+            '@keyframes fadeInUpBig': keyframesFadeIn.keyframeFadeInUpBig,
+            '@keyframes fadeOut': keyframesFadeOut.keyframeFadeOut,
+            '@keyframes fadeOutDown': keyframesFadeOut.keyframeFadeOutDown,
+            '@keyframes fadeOutDownBig': keyframesFadeOut.keyframeFadeOutDownBig,
+            '@keyframes fadeOutLeft': keyframesFadeOut.keyframeFadeOutLeft,
+            '@keyframes fadeOutLeftBig': keyframesFadeOut.keyframeFadeOutLeftBig,
+            '@keyframes fadeOutRight': keyframesFadeOut.keyframeFadeOutRight,
+            '@keyframes fadeOutRightBig': keyframesFadeOut.keyframeFadeOutRightBig,
+            '@keyframes fadeOutUp': keyframesFadeOut.keyframeFadeOutUp,
+            '@keyframes fadeOutUpBig': keyframesFadeOut.keyframeFadeOutUpBig
+        }
+
+        const fallbackUtilities = {
             '.animated': {
                 animationDuration: `${animatedSpeed}ms`,
                 animationFillMode: 'both'
@@ -214,7 +295,7 @@ module.exports = function ({ settings = {}, variants = ['responsive'] }) {
                 animationName: 'bounceOutUp',
             },
             '.zoomOut': {
-                animationName: 'zoomOut',
+                animationName: 'zoomIn',
             },
             '.zoomOutDown': {
                 animationName: 'zoomOutDown',
@@ -306,95 +387,23 @@ module.exports = function ({ settings = {}, variants = ['responsive'] }) {
             '.fadeOutUpBig': {
                 animationName: 'fadeOutUpBig'
             },
-        }, {
-            variants,
-            respectPrefix: true,
-            respectImportant: false
         }
-        );
 
-        addUtilities({
-            '@keyframes bounce': keyframes.keyframeBounce,
-            '@keyframes flash': keyframes.keyframeFlash,
-            '@keyframes pulse': keyframes.keyframePulse,
-            '@keyframes rubberBand': keyframes.keyframeRubberBand,
-            '@keyframes shake': keyframes.keyframeShake,
-            '@keyframes headShake': keyframes.keyframeHeadShake,
-            '@keyframes swing': keyframes.keyframeSwing,
-            '@keyframes tada': keyframes.keyframeTada,
-            '@keyframes wobble': keyframes.keyframeWobble,
-            '@keyframes jello': keyframes.keyframeJello,
-            '@keyframes heartBeat': keyframes.keyframeHeartBeat,
-            '@keyframes hinge': keyframes.keyframeHinge,
-            '@keyframes jackInTheBox': keyframes.keyframeJackInTheBox,
-            '@keyframes lightSpeedIn': keyframesLightSpeed.keyframeLightSpeedIn,
-            '@keyframes lightSpeedOut': keyframesLightSpeed.keyframeLightSpeedOut,
-            '@keyframes flip': keyframesFlip.keyframeFlip,
-            '@keyframes flipInX': keyframesFlip.keyframeFlipInX,
-            '@keyframes flipInY': keyframesFlip.keyframeFlipInY,
-            '@keyframes flipOutX': keyframesFlip.keyframeFlipOutX,
-            '@keyframes flipOutY': keyframesFlip.keyframeFlipOutY,
-            '@keyframes rotateIn': keyframesRotateIn.keyframeRotateIn,
-            '@keyframes rotateInDownLeft': keyframesRotateIn.keyframeRotateInDownLeft,
-            '@keyframes rotateInDownRight': keyframesRotateIn.keyframeRotateInDownRight,
-            '@keyframes rotateInUpLeft': keyframesRotateIn.keyframeRotateInUpLeft,
-            '@keyframes rotateInUpRight': keyframesRotateIn.keyframeRotateInUpRight,
-            '@keyframes rotateOut': keyframesRotateOut.keyframeRotateOut,
-            '@keyframes rotateOutDownLeft': keyframesRotateOut.keyframeRotateOutDownLeft,
-            '@keyframes rotateOutDownRight': keyframesRotateOut.keyframeRotateOutDownRight,
-            '@keyframes rotateOutUpLeft': keyframesRotateOut.keyframeRotateOutUpLeft,
-            '@keyframes rotateOutUpRight': keyframesRotateOut.keyframeRotateOutUpRight,
-            '@keyframes rollIn': keyframesRoll.keyframeRollIn,
-            '@keyframes rollOut': keyframesRoll.keyframeRollOut,
-            '@keyframes zoomIn': keyframesZoomIn.keyframeZoomIn,
-            '@keyframes zoomInDown': keyframesZoomIn.keyframeZoomInDown,
-            '@keyframes zoomInLeft': keyframesZoomIn.keyframeZoomInLeft,
-            '@keyframes zoomInRight': keyframesZoomIn.keyframeZoomInRight,
-            '@keyframes zoomInUp': keyframesZoomIn.keyframeZoomInUp,
-            '@keyframes bounceIn': keyframesBounceIn.keyframeBounceIn,
-            '@keyframes bounceInDown': keyframesBounceIn.keyframeBounceInDown,
-            '@keyframes bounceInLeft': keyframesBounceIn.keyframeBounceInLeft,
-            '@keyframes bounceInRight': keyframesBounceIn.keyframeBounceInRight,
-            '@keyframes bounceInUp': keyframesBounceIn.keyframeBounceInUp,
-            '@keyframes bounceOut': keyframesBounceOut.keyframeBounceOut,
-            '@keyframes bounceOutDown': keyframesBounceOut.keyframeBounceOutDown,
-            '@keyframes bounceOutLeft': keyframesBounceOut.keyframeBounceOutLeft,
-            '@keyframes bounceOutRight': keyframesBounceOut.keyframeBounceOutRight,
-            '@keyframes bounceOutUp': keyframesBounceOut.keyframeBounceOutUp,
-            '@keyframes zoomOut': keyframesZoomOut.keyframeZoomOut,
-            '@keyframes zoomOutDown': keyframesZoomOut.keyframeZoomOutDown,
-            '@keyframes zoomOutLeft': keyframesZoomOut.keyframeZoomOutLeft,
-            '@keyframes zoomOutRight': keyframesZoomOut.keyframeZoomOutRight,
-            '@keyframes zoomOutUp': keyframesZoomOut.keyframeZoomOutUp,
-            '@keyframes slideInDown': keyframesSlideIn.keyframeSlideInDown,
-            '@keyframes slideInLeft': keyframesSlideIn.keyframeSlideInLeft,
-            '@keyframes slideInRight': keyframesSlideIn.keyframeSlideInRight,
-            '@keyframes slideInUp': keyframesSlideIn.keyframeSlideInUp,
-            '@keyframes slideOutDown': keyframesSlideOut.keyframeSlideOutDown,
-            '@keyframes slideOutLeft': keyframesSlideOut.keyframeSlideOutLeft,
-            '@keyframes slideOutRight': keyframesSlideOut.keyframeSlideOutRight,
-            '@keyframes slideOutUp': keyframesSlideOut.keyframeSlideOutUp,
-            '@keyframes fadeIn': keyframesFadeIn.keyframeFadeIn,
-            '@keyframes fadeInDown': keyframesFadeIn.keyframeFadeInDown,
-            '@keyframes fadeInDownBig': keyframesFadeIn.keyframeFadeInDownBig,
-            '@keyframes fadeInLeft': keyframesFadeIn.keyframeFadeInLeft,
-            '@keyframes fadeInLeftBig': keyframesFadeIn.keyframeFadeInLeftBig,
-            '@keyframes fadeInRight': keyframesFadeIn.keyframeFadeInRight,
-            '@keyframes fadeInRightBig': keyframesFadeIn.keyframeFadeInRightBig,
-            '@keyframes fadeInUp': keyframesFadeIn.keyframeFadeInUp,
-            '@keyframes fadeInUpBig': keyframesFadeIn.keyframeFadeInUpBig,
-            '@keyframes fadeOut': keyframesFadeOut.keyframeFadeOut,
-            '@keyframes fadeOutDown': keyframesFadeOut.keyframeFadeOutDown,
-            '@keyframes fadeOutDownBig': keyframesFadeOut.keyframeFadeOutDownBig,
-            '@keyframes fadeOutLeft': keyframesFadeOut.keyframeFadeOutLeft,
-            '@keyframes fadeOutLeftBig': keyframesFadeOut.keyframeFadeOutLeftBig,
-            '@keyframes fadeOutRight': keyframesFadeOut.keyframeFadeOutRight,
-            '@keyframes fadeOutRightBig': keyframesFadeOut.keyframeFadeOutRightBig,
-            '@keyframes fadeOutUp': keyframesFadeOut.keyframeFadeOutUp,
-            '@keyframes fadeOutUpBig': keyframesFadeOut.keyframeFadeOutUpBig
-        }, {
-            respectPrefix: true,
-            respectImportant: false
-        });
+        let utilities = {};
+        let keyFrames = {};
+
+        if (classes && classes.length > 0) {
+            classes.forEach((el) => {
+                utilities[`.${el}`] = fallbackUtilities[`.${el}`];
+                keyFrames[`@keyframes ${el}`] = fallbackKeyframes[`@keyframes ${el}`];
+            });
+        } else {
+            utilities = fallbackUtilities;
+            keyFrames = fallbackKeyframes;
+        }
+
+        addUtilities(utilities, { variants, respectImportant: false });
+
+        addUtilities(keyFrames, { respectImportant: false });
     };
 };
