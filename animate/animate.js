@@ -14,7 +14,7 @@ const keyframesFadeIn = require('./keyframes/fadeIn');
 const keyframesFadeOut = require('./keyframes/fadeOut');
 
 module.exports = function ({ settings = {}, variants = ['responsive'] }) {
-    return function ({ e, addUtilities }) {
+    return function ({ e, addUtilities, prefix }) {
 
         // set fallback if speed not defined
         const animatedSpeed = settings.animatedSpeed ? settings.animatedSpeed : 1000;
@@ -306,7 +306,12 @@ module.exports = function ({ settings = {}, variants = ['responsive'] }) {
             '.fadeOutUpBig': {
                 animationName: 'fadeOutUpBig'
             },
-        }, { variants, respectImportant: false });
+        }, {
+            variants,
+            respectPrefix: true,
+            respectImportant: false
+        }
+        );
 
         addUtilities({
             '@keyframes bounce': keyframes.keyframeBounce,
@@ -387,6 +392,9 @@ module.exports = function ({ settings = {}, variants = ['responsive'] }) {
             '@keyframes fadeOutRightBig': keyframesFadeOut.keyframeFadeOutRightBig,
             '@keyframes fadeOutUp': keyframesFadeOut.keyframeFadeOutUp,
             '@keyframes fadeOutUpBig': keyframesFadeOut.keyframeFadeOutUpBig
-        }, { respectImportant: false });
+        }, {
+            respectPrefix: true,
+            respectImportant: false
+        });
     };
 };

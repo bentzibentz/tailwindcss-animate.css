@@ -35,6 +35,15 @@ plugins: [
 ]
 ```
 
+If you want to prefix your CSS classes, use the tailwind prefix option:
+
+```js
+// tailwind.config.js
+module.exports = {
+  prefix: 'tw-',
+  // ...
+}
+```
 ### Adjustable, optional settings
 * ```animatedSpeed``` used for the animationDuration of the .animated class
 * ```heartBeat``` used for the animationDuration of the .heartBeat class
