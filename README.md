@@ -8,7 +8,7 @@
 </p>
 
 # Animate CSS - Tailwind CSS Plugin
-Add [Animate CSS](https://github.com/daneden/animate.css) as [Tailwind CSS](https://github.com/tailwindcss/tailwindcss) plugin to your project.
+Add [Animate CSS](https://github.com/animate-css/animate.css) as [Tailwind CSS](https://github.com/tailwindcss/tailwindcss) plugin to your project.
 
 ## Installation
 
@@ -194,7 +194,7 @@ plugins: [
 
 ## Credits
 
-This package is based on [Animate.css](https://github.com/daneden/animate.css).
+This package is based on awesome [Animate.css](https://github.com/animate-css/animate.css).
 
 ## More Tailwind CSS Plugins
 [tailwindcss-absolute-center](https://github.com/bentzibentz/tailwindcss-absolute-center)

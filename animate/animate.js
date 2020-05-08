@@ -16,6 +16,11 @@ const keyframesFadeOut = require('./keyframes/fadeOut');
 module.exports = function ({ classes = [], settings = {}, variants = ['responsive'] }) {
     return function ({ e, addUtilities, prefix, addVariant, postcss }) {
 
+        // set settings obj to not break
+        if (!settings) {
+            settings = {};
+        }
+
         // set fallback if speed not defined
         const animatedSpeed = settings.animatedSpeed ? settings.animatedSpeed : 1000;
         const heartBeatSpeed = settings.heartBeatSpeed ? settings.heartBeatSpeed : 1000;
@@ -107,284 +112,293 @@ module.exports = function ({ classes = [], settings = {}, variants = ['responsiv
         }
 
         const fallbackUtilities = {
-            '.animated': {
+            '.animate__animated': {
                 animationDuration: `${animatedSpeed}ms`,
                 animationFillMode: 'both'
             },
-            '.infinite': {
+            '.animate__infinite': {
                 animationIterationCount: 'infinite'
             },
-            '.delay': {
+            '.animate__repeat-1': {
+                animationRepeat: 1
+            },
+            '.animate__repeat-2': {
+                animationRepeat: 2
+            },
+            '.animate__repeat-3': {
+                animationRepeat: 3
+            },
+            '.animate__delay': {
                 animationDelay: `${animationDelaySpeed}ms`
             },
-            '.delay-1s': {
+            '.animate__delay-1s': {
                 animationDelay: `1000ms`
             },
-            '.delay-2s': {
+            '.animate__delay-2s': {
                 animationDelay: `2000ms`
             },
-            '.delay-3s': {
+            '.animate__delay-3s': {
                 animationDelay: `3000ms`
             },
-            '.delay-4s': {
+            '.animate__delay-4s': {
                 animationDelay: `4000ms`
             },
-            '.delay-5s': {
+            '.animate__delay-5s': {
                 animationDelay: `5000ms`
             },
-            '.fast': {
+            '.animate__fast': {
                 animationDuration: `800ms`
             },
-            '.faster': {
+            '.animate__faster': {
                 animationDuration: `500ms`
             },
-            '.slow': {
+            '.animate__slow': {
                 animationDuration: `2000ms`
             },
-            '.slower': {
+            '.animate__slower': {
                 animationDuration: `3000ms`
             },
-            '.bounce': {
+            '.animate__bounce': {
                 animationName: 'bounce',
                 transformOrigin: 'center bottom'
             },
-            '.flash': {
+            '.animate__flash': {
                 animationName: 'flash',
             },
-            '.pulse': {
+            '.animate__pulse': {
                 animationName: 'pulse',
             },
-            '.rubberBand': {
+            '.animate__rubberBand': {
                 animationName: 'rubberBand',
             },
-            '.shake': {
+            '.animate__shake': {
                 animationName: 'shake',
             },
-            '.headShake': {
+            '.animate__headShake': {
                 animationTimingFunction: 'ease-in-out',
                 animationName: 'headShake',
             },
-            '.swing': {
+            '.animate__swing': {
                 transformOrigin: 'top center',
                 animationName: 'swing',
             },
-            '.tada': {
+            '.animate__tada': {
                 animationName: 'tada',
             },
-            '.wobble': {
+            '.animate__wobble': {
                 animationName: 'wobble',
             },
-            '.jello': {
+            '.animate__jello': {
                 animationName: 'jello',
             },
-            '.heartBeat': {
+            '.animate__heartBeat': {
                 animationName: 'heartBeat',
                 animationDuration: `${heartBeatSpeed}ms`,
                 animationTimingFunction: 'ease-in-out'
             },
-            '.hinge': {
+            '.animate__hinge': {
                 animationName: 'hinge',
                 animationDuration: `${hingeSpeed}ms`,
             },
-            '.jackInTheBox': {
+            '.animate__jackInTheBox': {
                 animationName: 'jackInTheBox',
             },
-            '.lightSpeedIn': {
+            '.animate__lightSpeedIn': {
                 animationName: 'lightSpeedIn',
             },
-            '.lightSpeedOut': {
+            '.animate__lightSpeedOut': {
                 animationName: 'lightSpeedOut',
             },
-            '.flip': {
+            '.animate__flip': {
                 animationName: 'flip',
                 backfaceVisibility: 'visible'
             },
-            '.flipInX': {
+            '.animate__flipInX': {
                 animationName: 'flipInX',
                 backfaceVisibility: 'visible'
             },
-            '.flipInY': {
+            '.animate__flipInY': {
                 animationName: 'flipInY',
                 backfaceVisibility: 'visible'
             },
-            '.flipOutX': {
+            '.animate__flipOutX': {
                 animationName: 'flipOutX',
                 backfaceVisibility: 'visible'
             },
-            '.rotateIn': {
+            '.animate__rotateIn': {
                 animationName: 'rotateIn',
             },
-            '.rotateInDownLeft': {
+            '.animate__rotateInDownLeft': {
                 animationName: 'rotateInDownLeft',
             },
-            '.rotateInDownRight': {
+            '.animate__rotateInDownRight': {
                 animationName: 'rotateInDownRight',
             },
-            '.rotateInUpLeft': {
+            '.animate__rotateInUpLeft': {
                 animationName: 'rotateInUpLeft',
             },
-            '.rotateInUpRight': {
+            '.animate__rotateInUpRight': {
                 animationName: 'rotateInUpRight',
             },
-            '.rotateOut': {
+            '.animate__rotateOut': {
                 animationName: 'rotateOut',
             },
-            '.rotateOutDownLeft': {
+            '.animate__rotateOutDownLeft': {
                 animationName: 'rotateOutDownLeft',
             },
-            '.rotateOutDownRight': {
+            '.animate__rotateOutDownRight': {
                 animationName: 'rotateOutDownRight',
             },
-            '.rotateOutUpLeft': {
+            '.animate__rotateOutUpLeft': {
                 animationName: 'rotateOutUpLeft',
             },
-            '.rotateOutUpRight': {
+            '.animate__rotateOutUpRight': {
                 animationName: 'rotateOutUpRight',
             },
-            '.rollIn': {
+            '.animate__rollIn': {
                 animationName: 'rollIn',
             },
-            '.rollOut': {
+            '.animate__rollOut': {
                 animationName: 'rollOut',
             },
-            '.zoomIn': {
+            '.animate__zoomIn': {
                 animationName: 'zoomIn',
             },
-            '.zoomInDown': {
+            '.animate__zoomInDown': {
                 animationName: 'zoomInDown',
             },
-            '.zoomInLeft': {
+            '.animate__zoomInLeft': {
                 animationName: 'zoomInLeft',
             },
-            '.zoomInRight': {
+            '.animate__zoomInRight': {
                 animationName: 'zoomInRight',
             },
-            '.zoomInUp': {
+            '.animate__zoomInUp': {
                 animationName: 'zoomInUp',
             },
-            '.bounceIn': {
+            '.animate__bounceIn': {
                 animationName: 'bounceIn',
                 animationDuration: `${bounceInSpeed}ms`,
             },
-            '.bounceInDown': {
+            '.animate__bounceInDown': {
                 animationName: 'bounceInDown',
             },
-            '.bounceInLeft': {
+            '.animate__bounceInLeft': {
                 animationName: 'bounceInLeft',
             },
-            '.bounceInRight': {
+            '.animate__bounceInRight': {
                 animationName: 'bounceInRight',
             },
-            '.bounceInUp': {
+            '.animate__bounceInUp': {
                 animationName: 'bounceInUp',
             },
-            '.bounceOut': {
+            '.animate__bounceOut': {
                 animationName: 'bounceOut',
                 animationDuration: `${bounceOutSpeed}ms`,
             },
-            '.bounceOutDown': {
+            '.animate__bounceOutDown': {
                 animationName: 'bounceOutDown',
             },
-            '.bounceOutLeft': {
+            '.animate__bounceOutLeft': {
                 animationName: 'bounceOutLeft',
             },
-            '.bounceOutRight': {
+            '.animate__bounceOutRight': {
                 animationName: 'bounceOutRight',
             },
-            '.bounceOutUp': {
+            '.animate__bounceOutUp': {
                 animationName: 'bounceOutUp',
             },
-            '.zoomOut': {
+            '.animate__zoomOut': {
                 animationName: 'zoomIn',
             },
-            '.zoomOutDown': {
+            '.animate__zoomOutDown': {
                 animationName: 'zoomOutDown',
             },
-            '.zoomOutLeft': {
+            '.animate__zoomOutLeft': {
                 animationName: 'zoomOutLeft',
             },
-            '.zoomOutRight': {
+            '.animate__zoomOutRight': {
                 animationName: 'zoomOutRight',
             },
-            '.zoomOutUp': {
+            '.animate__zoomOutUp': {
                 animationName: 'zoomOutUp',
             },
-            '.slideInDown': {
+            '.animate__slideInDown': {
                 animationName: 'slideInDown'
             },
-            '.slideInLeft': {
+            '.animate__slideInLeft': {
                 animationName: 'slideInLeft'
             },
-            '.slideInRight': {
+            '.animate__slideInRight': {
                 animationName: 'slideInRight'
             },
-            '.slideInUp': {
+            '.animate__slideInUp': {
                 animationName: 'slideInUp'
             },
-            '.slideOutDown': {
+            '.animate__slideOutDown': {
                 animationName: 'slideOutDown'
             },
-            '.slideOutLeft': {
+            '.animate__slideOutLeft': {
                 animationName: 'slideOutLeft'
             },
-            '.slideOutRight': {
+            '.animate__slideOutRight': {
                 animationName: 'slideOutRight'
             },
-            '.slideOutUp': {
+            '.animate__slideOutUp': {
                 animationName: 'slideOutUp'
             },
-            '.fadeIn': {
+            '.animate__fadeIn': {
                 animationName: 'fadeIn'
             },
-            '.fadeInDown': {
+            '.animate__fadeInDown': {
                 animationName: 'fadeInDown'
             },
-            '.fadeInDownBig': {
+            '.animate__fadeInDownBig': {
                 animationName: 'fadeInDownBig'
             },
-            '.fadeInLeft': {
+            '.animate__fadeInLeft': {
                 animationName: 'fadeInLeft'
             },
-            '.fadeInLeftBig': {
+            '.animate__fadeInLeftBig': {
                 animationName: 'fadeInLeftBig'
             },
-            '.fadeInRight': {
+            '.animate__fadeInRight': {
                 animationName: 'fadeInRight'
             },
-            '.fadeInRightBig': {
+            '.animate__fadeInRightBig': {
                 animationName: 'fadeInRightBig'
             },
-            '.fadeInUp': {
+            '.animate__fadeInUp': {
                 animationName: 'fadeInUp'
             },
-            '.fadeInUpBig': {
+            '.animate__fadeInUpBig': {
                 animationName: 'fadeInUpBig'
             },
-            '.fadeOut': {
+            '.animate__fadeOut': {
                 animationName: 'fadeOut'
             },
-            '.fadeOutDown': {
+            '.animate__fadeOutDown': {
                 animationName: 'fadeOutDown'
             },
-            '.fadeOutDownBig': {
+            '.animate__fadeOutDownBig': {
                 animationName: 'fadeOutDownBig'
             },
-            '.fadeOutLeft': {
+            '.animate__fadeOutLeft': {
                 animationName: 'fadeOutLeft'
             },
-            '.fadeOutLeftBig': {
+            '.animate__fadeOutLeftBig': {
                 animationName: 'fadeOutLeftBig'
             },
-            '.fadeOutRight': {
+            '.animate__fadeOutRight': {
                 animationName: 'fadeOutRight'
             },
-            '.fadeOutRightBig': {
+            '.animate__fadeOutRightBig': {
                 animationName: 'fadeOutRightBig'
             },
-            '.fadeOutUp': {
+            '.animate__fadeOutUp': {
                 animationName: 'fadeOutUp'
             },
-            '.fadeOutUpBig': {
+            '.animate__fadeOutUpBig': {
                 animationName: 'fadeOutUpBig'
             },
         }
