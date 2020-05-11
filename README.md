@@ -41,7 +41,7 @@ Install tailwindcss plugin as described above and add it to your tailwind.config
 plugins: [
   // Other plugins
   require('tailwindcss-animatecss')({
-        classes: ['fade', 'bounce', 'lightSpeedOut'],
+        classes: ['animate__animated', 'animate__fadeIn', 'animate__bounceIn', 'animate__lightSpeedOut'],
         settings: {
           animatedSpeed: 1000,
           heartBeatSpeed: 1000,
@@ -55,7 +55,7 @@ plugins: [
 ]
 ```
 
-You want to determine yourself which classes are used? You just have to set these class names at the classes array. Caution, class names without dot and without the ```animate``` prefix, for example if you want ```.animate__fade``` just add ```fade``` to the array.
+You want to determine yourself which classes are used? You just have to set these class names at the classes array. Caution, class names without dot and without the ```animate``` prefix, for example if you want ```.animate__fadeIn``` just add ```animate__fadeIn``` to the array.
 You can find all available class names further down.
 
 Defining the classes is recommended to avoid to bloat your css with unused classes and keyframes.
@@ -64,7 +64,7 @@ Defining the classes is recommended to avoid to bloat your css with unused class
 plugins: [
   // Other plugins
   require('tailwindcss-animatecss')({
-        classes: ['fade', 'bounce', ...],
+        classes: ['animate__animated', 'animate__fadeIn', 'animate__bounceIn', ...],
         settings: {},
         variants: [],
       }),
