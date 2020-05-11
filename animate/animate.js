@@ -12,6 +12,8 @@ const keyframesSlideIn = require('./keyframes/slideIn');
 const keyframesSlideOut = require('./keyframes/slideOut');
 const keyframesFadeIn = require('./keyframes/fadeIn');
 const keyframesFadeOut = require('./keyframes/fadeOut');
+const keyframesBackIn = require('./keyframes/backIn');
+const keyframesBackOut = require('./keyframes/backOut');
 
 module.exports = function ({ classes = [], settings = {}, variants = ['responsive'] }) {
     return function ({ e, addUtilities, prefix, addVariant, postcss }) {
@@ -35,7 +37,8 @@ module.exports = function ({ classes = [], settings = {}, variants = ['responsiv
             '@keyframes flash': keyframes.keyframeFlash,
             '@keyframes pulse': keyframes.keyframePulse,
             '@keyframes rubberBand': keyframes.keyframeRubberBand,
-            '@keyframes shake': keyframes.keyframeShake,
+            '@keyframes shakeX': keyframes.keyframeShakeX,
+            '@keyframes shakeY': keyframes.keyframeShakeY,
             '@keyframes headShake': keyframes.keyframeHeadShake,
             '@keyframes swing': keyframes.keyframeSwing,
             '@keyframes tada': keyframes.keyframeTada,
@@ -44,8 +47,10 @@ module.exports = function ({ classes = [], settings = {}, variants = ['responsiv
             '@keyframes heartBeat': keyframes.keyframeHeartBeat,
             '@keyframes hinge': keyframes.keyframeHinge,
             '@keyframes jackInTheBox': keyframes.keyframeJackInTheBox,
-            '@keyframes lightSpeedIn': keyframesLightSpeed.keyframeLightSpeedIn,
-            '@keyframes lightSpeedOut': keyframesLightSpeed.keyframeLightSpeedOut,
+            '@keyframes lightSpeedInLeft': keyframesLightSpeed.keyframeLightSpeedInLeft,
+            '@keyframes lightSpeedInRight': keyframesLightSpeed.keyframeLightSpeedInRight,
+            '@keyframes lightSpeedOutLeft': keyframesLightSpeed.keyframeLightSpeedOutLeft,
+            '@keyframes lightSpeedOutRight': keyframesLightSpeed.keyframeLightSpeedOutRight,
             '@keyframes flip': keyframesFlip.keyframeFlip,
             '@keyframes flipInX': keyframesFlip.keyframeFlipInX,
             '@keyframes flipInY': keyframesFlip.keyframeFlipInY,
@@ -98,6 +103,10 @@ module.exports = function ({ classes = [], settings = {}, variants = ['responsiv
             '@keyframes fadeInLeftBig': keyframesFadeIn.keyframeFadeInLeftBig,
             '@keyframes fadeInRight': keyframesFadeIn.keyframeFadeInRight,
             '@keyframes fadeInRightBig': keyframesFadeIn.keyframeFadeInRightBig,
+            '@keyframes fadeInTopLeft': keyframesFadeIn.keyframeFadeInTopLeft,
+            '@keyframes fadeInTopRight': keyframesFadeIn.keyframeFadeInTopRight,
+            '@keyframes fadeInBottomLeft': keyframesFadeIn.keyframeFadeInBottomLeft,
+            '@keyframes fadeInBottomRight': keyframesFadeIn.keyframeFadeInBottomRight,
             '@keyframes fadeInUp': keyframesFadeIn.keyframeFadeInUp,
             '@keyframes fadeInUpBig': keyframesFadeIn.keyframeFadeInUpBig,
             '@keyframes fadeOut': keyframesFadeOut.keyframeFadeOut,
@@ -108,7 +117,19 @@ module.exports = function ({ classes = [], settings = {}, variants = ['responsiv
             '@keyframes fadeOutRight': keyframesFadeOut.keyframeFadeOutRight,
             '@keyframes fadeOutRightBig': keyframesFadeOut.keyframeFadeOutRightBig,
             '@keyframes fadeOutUp': keyframesFadeOut.keyframeFadeOutUp,
-            '@keyframes fadeOutUpBig': keyframesFadeOut.keyframeFadeOutUpBig
+            '@keyframes fadeOutUpBig': keyframesFadeOut.keyframeFadeOutUpBig,
+            '@keyframes fadeOutTopLeft': keyframesFadeOut.keyframeFadeOutTopLeft,
+            '@keyframes fadeOutTopRight': keyframesFadeOut.keyframeFadeOutTopRight,
+            '@keyframes fadeOutBottomLeft': keyframesFadeOut.keyframeFadeOutBottomLeft,
+            '@keyframes fadeOutBottomRight': keyframesFadeOut.keyframeFadeOutBottomRight,
+            '@keyframes backInDown': keyframesBackIn.keyframeBackInDown,
+            '@keyframes backInUp': keyframesBackIn.keyframeBackInUp,
+            '@keyframes backInLeft': keyframesBackIn.keyframeBackInLeft,
+            '@keyframes backInRight': keyframesBackIn.keyframeBackInRight,
+            '@keyframes backOutDown': keyframesBackOut.keyframeBackOutDown,
+            '@keyframes backOutUp': keyframesBackOut.keyframeBackOutUp,
+            '@keyframes backOutLeft': keyframesBackOut.keyframeBackOutLeft,
+            '@keyframes backOutRight': keyframesBackOut.keyframeBackOutRight,
         }
 
         const fallbackUtilities = {
@@ -171,8 +192,11 @@ module.exports = function ({ classes = [], settings = {}, variants = ['responsiv
             '.animate__rubberBand': {
                 animationName: 'rubberBand',
             },
-            '.animate__shake': {
-                animationName: 'shake',
+            '.animate__shakeX': {
+                animationName: 'shakeX',
+            },
+            '.animate__shakeY': {
+                animationName: 'shakeY',
             },
             '.animate__headShake': {
                 animationTimingFunction: 'ease-in-out',
@@ -203,11 +227,17 @@ module.exports = function ({ classes = [], settings = {}, variants = ['responsiv
             '.animate__jackInTheBox': {
                 animationName: 'jackInTheBox',
             },
-            '.animate__lightSpeedIn': {
-                animationName: 'lightSpeedIn',
+            '.animate__lightSpeedInLeft': {
+                animationName: 'lightSpeedInLeft',
             },
-            '.animate__lightSpeedOut': {
-                animationName: 'lightSpeedOut',
+            '.animate__lightSpeedInRight': {
+                animationName: 'lightSpeedInRight',
+            },
+            '.animate__lightSpeedOutLeft': {
+                animationName: 'lightSpeedOutLeft',
+            },
+            '.animate__lightSpeedOutRight': {
+                animationName: 'lightSpeedOutRight',
             },
             '.animate__flip': {
                 animationName: 'flip',
@@ -374,6 +404,18 @@ module.exports = function ({ classes = [], settings = {}, variants = ['responsiv
             '.animate__fadeInUpBig': {
                 animationName: 'fadeInUpBig'
             },
+            '.animate__fadeInTopLeft': {
+                animationName: 'fadeInTopLeft'
+            },
+            '.animate__fadeInTopRight': {
+                animationName: 'fadeInTopRight'
+            },
+            '.animate__fadeInBottomLeft': {
+                animationName: 'fadeInBottomLeft'
+            },
+            '.animate__fadeInBottomRight': {
+                animationName: 'fadeInBottomRight'
+            },
             '.animate__fadeOut': {
                 animationName: 'fadeOut'
             },
@@ -400,6 +442,30 @@ module.exports = function ({ classes = [], settings = {}, variants = ['responsiv
             },
             '.animate__fadeOutUpBig': {
                 animationName: 'fadeOutUpBig'
+            },
+            '.animate__backInUp': {
+                animationName: 'backInUp'
+            },
+            '.animate__backInDown': {
+                animationName: 'backInDown'
+            },
+            '.animate__backInLeft': {
+                animationName: 'backInLeft'
+            },
+            '.animate__backInRight': {
+                animationName: 'backInRight'
+            },
+            '.animate__backOutUp': {
+                animationName: 'backOutUp'
+            },
+            '.animate__backOutDown': {
+                animationName: 'backOutDown'
+            },
+            '.animate__backOutLeft': {
+                animationName: 'backOutLeft'
+            },
+            '.animate__backOutRight': {
+                animationName: 'backOutRight'
             },
         }
 

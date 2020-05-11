@@ -95,6 +95,50 @@ const keyframeFadeInUpBig = {
     },
 };
 
+const keyframeFadeInTopLeft = {
+    'from': {
+        opacity: '0',
+        transform: 'translate3d(-100%, -100%, 0)'
+    },
+    'to': {
+        opacity: '1',
+        transform: 'translate3d(0, 0, 0)'
+    },
+};
+
+const keyframeFadeInTopRight = {
+    'from': {
+        opacity: '0',
+        transform: 'translate3d(100%, -100%, 0)'
+    },
+    'to': {
+        opacity: '1',
+        transform: 'translate3d(0, 0, 0)'
+    },
+};
+
+const keyframeFadeInBottomLeft = {
+    'from': {
+        opacity: '0',
+        transform: 'translate3d(-100%, 100%, 0)'
+    },
+    'to': {
+        opacity: '1',
+        transform: 'translate3d(0, 0, 0)'
+    },
+};
+
+const keyframeFadeInBottomRight = {
+    'from': {
+        opacity: '0',
+        transform: 'translate3d(100%, 100%, 0)'
+    },
+    'to': {
+        opacity: '1',
+        transform: 'translate3d(0, 0, 0)'
+    },
+};
+
 exports.keyframeFadeIn = keyframeFadeIn;
 exports.keyframeFadeInDown = keyframeFadeInDown;
 exports.keyframeFadeInDownBig = keyframeFadeInDownBig;
@@ -104,3 +148,7 @@ exports.keyframeFadeInRight = keyframeFadeInRight;
 exports.keyframeFadeInRightBig = keyframeFadeInRightBig;
 exports.keyframeFadeInUp = keyframeFadeInUp;
 exports.keyframeFadeInUpBig = keyframeFadeInUpBig;
+exports.keyframeFadeInTopLeft = keyframeFadeInTopLeft;
+exports.keyframeFadeInTopRight = keyframeFadeInTopRight;
+exports.keyframeFadeInBottomLeft = keyframeFadeInBottomLeft;
+exports.keyframeFadeInBottomRight = keyframeFadeInBottomRight;

@@ -61,7 +61,7 @@ const keyframeRubberBand = {
     }
 };
 
-const keyframeShake = {
+const keyframeShakeX = {
     'from, to': {
         transform: 'translate3d(0, 0, 0)'
     },
@@ -70,6 +70,18 @@ const keyframeShake = {
     },
     '20%, 40%, 60%, 80%': {
         transform: 'translate3d(10px, 0, 0)'
+    }
+};
+
+const keyframeShakeY = {
+    'from, to': {
+        transform: 'translate3d(0, 0, 0)'
+    },
+    '10%, 30%, 50%, 70%, 90%': {
+        transform: 'translate3d(0, -10px, 0)'
+    },
+    '20%, 40%, 60%, 80%': {
+        transform: 'translate3d(0, 10px, 0)'
     }
 };
 
@@ -93,6 +105,7 @@ const keyframeHeadShake = {
         transform: 'translateX(0)'
     }
 };
+
 
 const keyframeSwing = {
     '20%': {
@@ -243,7 +256,8 @@ exports.keyframeBounce = keyframeBounce;
 exports.keyframeFlash = keyframeFlash;
 exports.keyframePulse = keyframePulse;
 exports.keyframeRubberBand = keyframeRubberBand;
-exports.keyframeShake = keyframeShake;
+exports.keyframeShakeX = keyframeShakeX;
+exports.keyframeShakeY = keyframeShakeY;
 exports.keyframeHeadShake = keyframeHeadShake;
 exports.keyframeSwing = keyframeSwing;
 exports.keyframeTada = keyframeTada;

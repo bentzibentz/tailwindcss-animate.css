@@ -22,6 +22,16 @@ npm install tailwindcss-animatecss
 yarn add tailwindcss-animatecss
 ```
 
+Use animatecss < v4:
+
+```bash
+npm install tailwindcss-animatecss@0.3.3
+```
+
+```bash
+yarn add tailwindcss-animatecss@0.3.3
+```
+
 ## Usage
 
 Add Tailwind CSS to your project as described [here](https://tailwindcss.com/docs/installation).
@@ -45,7 +55,7 @@ plugins: [
 ]
 ```
 
-You want to determine yourself which classes are used? You just have to set these class names at the classes array. Caution, class names without dot, for example if you want ```.fade``` just add ```fade``` to the array.
+You want to determine yourself which classes are used? You just have to set these class names at the classes array. Caution, class names without dot and without the ```animate``` prefix, for example if you want ```.animate__fade``` just add ```fade``` to the array.
 You can find all available class names further down.
 
 Defining the classes is recommended to avoid to bloat your css with unused classes and keyframes.
@@ -101,96 +111,117 @@ plugins: [
 
 
 ### Available Animate CSS classes
-* .animated
-* .infinite
-* .delay
-* .delay-1
-* .delay-2
-* .delay-3
-* .delay-4
-* .delay-5
-* .fast
-* .faster
-* .slow
-* .slower
-* .bounce
-* .flash
-* .pulse
-* .rubberBand
-* .shake
-* .headShakte
-* .swing
-* .tada
-* .wobble
-* .jello
-* .heartBeat
-* .hinge
-* .jackInTheBox
-* .lightSpeedIn
-* .lightSpeedOut
-* .flip
-* .flipInX
-* .flipInY
-* .flipOutX
-* .flipOutY
-* .rotateIn
-* .rotateInDownLeft
-* .rotateInDownRight
-* .rotateInUpLeft
-* .rotateInUpRight
-* .rotateOut
-* .rotateOutDownLeft
-* .rotateOutDownRight
-* .rotateOutUpLeft
-* .rotateOutUpRight
-* .rollIn
-* .rollOut
-* .zoomIn
-* .zoomInUp
-* .zoomInDown
-* .zoomInLeft
-* .zoomInRight
-* .bounceIn
-* .bounceInDown
-* .bounceInUp
-* .bounceInLeft
-* .bounceInRight
-* .bounceOut
-* .bounceOutDown
-* .bounceOutUp
-* .bounceOutLeft
-* .bounceOutRight
-* .slideInDown
-* .slideInLeft
-* .slideInRight
-* .slideInUp
-* .slideOutDown
-* .slideOutLeft
-* .slideOutRight
-* .slideOutUp
-* .fadeIn
-* .fadeInDown
-* .fadeInDownBig
-* .fadeInLeft
-* .fadeInLeftBig
-* .fadeInRight
-* .fadeInRightBig
-* .fadeInUp
-* .fadeInUpBig
-* .fadeOut
-* .fadeOutDown
-* .fadeOutDownBig
-* .fadeOutLeft
-* .fadeOutLeftBig
-* .fadeOutRight
-* .fadeOutRightBig
-* .fadeOutUp
-* .fadeOutUpBig
-* .zoomOutDown
-* .zoomOutLeft
-* .zoomOutRight
-* .zoomOut
-* .zoomOutUp
+* .animate__animated
+* .animate__infinite
+* .animate__delay
+* .animate__delay-1
+* .animate__delay-2
+* .animate__delay-3
+* .animate__delay-4
+* .animate__delay-5
+* .animate__fast
+* .animate__faster
+* .animate__slow
+* .animate__slower
+* .animate__bounce
+* .animate__flash
+* .animate__pulse
+* .animate__rubberBand
+* .animate__shakeY
+* .animate__shakeX
+* .animate__headShake
+* .animate__swing
+* .animate__tada
+* .animate__wobble
+* .animate__jello
+* .animate__heartBeat
+* .animate__hinge
+* .animate__jackInTheBox
+* .animate__lightSpeedIn
+* .animate__lightSpeedOut
+* .animate__flip
+* .animate__flipInX
+* .animate__flipInY
+* .animate__flipOutX
+* .animate__flipOutY
+* .animate__rotateIn
+* .animate__rotateInDownLeft
+* .animate__rotateInDownRight
+* .animate__rotateInUpLeft
+* .animate__rotateInUpRight
+* .animate__rotateOut
+* .animate__rotateOutDownLeft
+* .animate__rotateOutDownRight
+* .animate__rotateOutUpLeft
+* .animate__rotateOutUpRight
+* .animate__rollIn
+* .animate__rollOut
+* .animate__zoomIn
+* .animate__zoomInUp
+* .animate__zoomInDown
+* .animate__zoomInLeft
+* .animate__zoomInRight
+* .animate__bounceIn
+* .animate__bounceInDown
+* .animate__bounceInUp
+* .animate__bounceInLeft
+* .animate__bounceInRight
+* .animate__bounceOut
+* .animate__bounceOutDown
+* .animate__bounceOutUp
+* .animate__bounceOutLeft
+* .animate__bounceOutRight
+* .animate__slideInDown
+* .animate__slideInLeft
+* .animate__slideInRight
+* .animate__slideInUp
+* .animate__slideOutDown
+* .animate__slideOutLeft
+* .animate__slideOutRight
+* .animate__slideOutUp
+* .animate__fadeIn
+* .animate__fadeInDown
+* .animate__fadeInDownBig
+* .animate__fadeInLeft
+* .animate__fadeInLeftBig
+* .animate__fadeInRight
+* .animate__fadeInRightBig
+* .animate__fadeInUp
+* .animate__fadeInUpBig
+* .animate__fadeInTopLeft
+* .animate__fadeInTopRight
+* .animate__fadeInBottomLeft
+* .animate__fadeInBottomRight
+* .animate__fadeOut
+* .animate__fadeOutDown
+* .animate__fadeOutDownBig
+* .animate__fadeOutLeft
+* .animate__fadeOutLeftBig
+* .animate__fadeOutRight
+* .animate__fadeOutRightBig
+* .animate__fadeOutUp
+* .animate__fadeOutUpBig
+* .animate__fadeOutTopLeft
+* .animate__fadeOutTopRight
+* .animate__fadeOutBottomLeft
+* .animate__fadeOutBottomRight
+* .animate__zoomOutDown
+* .animate__zoomOutLeft
+* .animate__zoomOutRight
+* .animate__zoomOut
+* .animate__zoomOutUp
+* .animate__lightSpeedInRight
+* .animate__lightSpeedInLeft
+* .animate__lightSpeedOutRight
+* .animate__lightSpeedOutLeft
+* .animate__backInDown
+* .animate__backInUp
+* .animate__backInLeft
+* .animate__backInRight
+* .animate__backOutDown
+* .animate__backOutUp
+* .animate__backOutLeft
+* .animate__backOutRight
 
 ## Credits
 
