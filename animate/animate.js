@@ -475,7 +475,8 @@ module.exports = function ({ classes = [], settings = {}, variants = ['responsiv
         if (classes && classes.length > 0) {
             classes.forEach((el) => {
                 utilities[`.${el}`] = fallbackUtilities[`.${el}`];
-                keyFrames[`@keyframes ${el}`] = fallbackKeyframes[`@keyframes ${el}`];
+                const res = el.replace('animate__', '');
+                keyFrames[`@keyframes ${res}`] = fallbackKeyframes[`@keyframes ${res}`];
             });
         } else {
             utilities = fallbackUtilities;
