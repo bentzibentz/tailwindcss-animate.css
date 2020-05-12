@@ -339,7 +339,7 @@ module.exports = function ({ classes = [], settings = {}, variants = ['responsiv
                 animationName: 'bounceOutUp',
             },
             '.animate__zoomOut': {
-                animationName: 'zoomIn',
+                animationName: 'zoomOut',
             },
             '.animate__zoomOutDown': {
                 animationName: 'zoomOutDown',
