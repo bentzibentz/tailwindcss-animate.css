@@ -122,7 +122,7 @@ const keyframeFadeOutBottomLeft= {
     },
     'to': {
         opacity: '0',
-        transform: 'translate3d(-100%, 100%, 0'
+        transform: 'translate3d(-100%, 100%, 0)'
     },
 };
 
