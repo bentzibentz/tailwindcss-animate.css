@@ -255,6 +255,10 @@ module.exports = function ({ classes = [], settings = {}, variants = ['responsiv
                 animationName: 'flipOutX',
                 backfaceVisibility: 'visible'
             },
+            '.animate__flipOutY': {
+                animationName: 'flipOutY',
+                backfaceVisibility: 'visible'
+            },
             '.animate__rotateIn': {
                 animationName: 'rotateIn',
             },
