@@ -114,11 +114,11 @@ plugins: [
 * .animate__animated
 * .animate__infinite
 * .animate__delay
-* .animate__delay-1
-* .animate__delay-2
-* .animate__delay-3
-* .animate__delay-4
-* .animate__delay-5
+* .animate__delay-1s
+* .animate__delay-2s
+* .animate__delay-3s
+* .animate__delay-4s
+* .animate__delay-5s
 * .animate__fast
 * .animate__faster
 * .animate__slow
