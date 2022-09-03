@@ -135,11 +135,14 @@ const animateCssTailwindCss = plugin(
             '@keyframes backOutRight': keyframesBackOut.keyframeBackOutRight,
         }
 
-        const fallbackUtilities = {
+        const fallbackAnimateUtility = {
             'animated': {
                 'animation-duration': `${animatedSpeed}ms`,
                 'animation-fill-mode': 'both'
             },
+        }
+
+        const fallbackUtilities = {
             'infinite': {
                 'animation-iteration-count': 'infinite'
             },
@@ -491,6 +494,8 @@ const animateCssTailwindCss = plugin(
 
         addUtilities(keyFrames)
 
+        utilities = {...utilities, ...fallbackAnimateUtility};
+
         addUtilities(
             [
                 Object.entries(utilities).map(([key, value]) => {
@@ -513,7 +518,7 @@ const animateCssTailwindCss = plugin(
                 bounceInSpeed: 750,
                 bounceOutSpeed: 750,
                 animationDelaySpeed: 500,
-                classes: ['animated', 'infinite', 'bounce', 'heartBeat']
+                classes: ['infinite', 'bounce', 'heartBeat']
             }
         },
     }
