@@ -219,6 +219,10 @@ Generating different class variants is super easy, tailwind does all the work fo
 * .animate__backOutLeft
 * .animate__backOutRight
 
+## Demo
+
+Coming soon…
+
 ## Credits
 
 This package is based on awesome [Animate.css](https://github.com/animate-css/animate.css).
