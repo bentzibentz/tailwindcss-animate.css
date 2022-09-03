@@ -38,6 +38,8 @@ yarn add tailwindcss-animatecss@0.3.3
 
 ### Usage with Tailwind v1 and v2
 
+For Documentation checkout Branch ``feature/v2``
+
 ```bash
 npm install tailwindcss-animatecss@1.0.8
 ```
@@ -222,7 +224,9 @@ Generating different class variants is super easy, tailwind does all the work fo
 This package is based on awesome [Animate.css](https://github.com/animate-css/animate.css).
 
 ## More Tailwind CSS Plugins
+
 [tailwindcss-layered-box-shadow](https://github.com/bentzibentz/tailwindcss-layered-box-shadow)
+
 [tailwindcss-absolute-center](https://github.com/bentzibentz/tailwindcss-absolute-center)
 
 ## License
