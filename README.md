@@ -4,11 +4,15 @@
   <a href="https://npmjs.com/package/tailwindcss-animatecss" target="_blank"><img alt="npm" src="https://img.shields.io/npm/dt/tailwindcss-animatecss?style=flat-square"></a>
   <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/minzip/tailwindcss-animatecss?style=flat-square">
   <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/bentzibentz/tailwindcss-animate.css?style=flat-square">
-  <img alt="License" src=" https://img.shields.io/github/license/bentzibentz/tailwindcss-animate.css">
+  <img alt="License" src="https://img.shields.io/github/license/bentzibentz/tailwindcss-animate.css">
 </p>
 
 # Animate CSS - Tailwind CSS Plugin
 Add [Animate CSS](https://github.com/animate-css/animate.css) as [Tailwind CSS](https://github.com/tailwindcss/tailwindcss) plugin to your project.
+
+## Important Information
+
+Tailwindcss >= v3.1.8 is required.
 
 ## Installation
 
@@ -32,6 +36,18 @@ npm install tailwindcss-animatecss@0.3.3
 yarn add tailwindcss-animatecss@0.3.3
 ```
 
+### Usage with Tailwind v1 and v2
+
+For Documentation checkout Branch ``feature/v2``
+
+```bash
+npm install tailwindcss-animatecss@1.0.8
+```
+
+```bash
+yarn add tailwindcss-animatecss@1.0.8
+```
+
 ## Usage
 
 Add Tailwind CSS to your project as described [here](https://tailwindcss.com/docs/installation).
@@ -39,36 +55,31 @@ Install tailwindcss plugin as described above and add it to your tailwind.config
 
 ```js
 plugins: [
-  // Other plugins
-  require('tailwindcss-animatecss')({
-        classes: ['animate__animated', 'animate__fadeIn', 'animate__bounceIn', 'animate__lightSpeedOut'],
-        settings: {
-          animatedSpeed: 1000,
-          heartBeatSpeed: 1000,
-          hingeSpeed: 2000,
-          bounceInSpeed: 750,
-          bounceOutSpeed: 750,
-          animationDelaySpeed: 1000
-        },
-        variants: ['responsive', 'hover', 'reduced-motion'],
-      }),
+    // Other plugins
+    require('tailwindcss-animatecss')(),
 ]
 ```
 
-You want to determine yourself which classes are used? You just have to set these class names at the classes array. Caution, class names without dot and without the ```animate``` prefix, for example if you want ```.animate__fadeIn``` just add ```animate__fadeIn``` to the array.
+You want to determine yourself which classes are used? You just have to set these class names at the classes array. For example if you want ```.animate__fadeIn``` just add ```fadeIn``` to the array.
 You can find all available class names further down.
 
 Defining the classes is recommended to avoid to bloat your css with unused classes and keyframes.
 
 ```js
-plugins: [
-  // Other plugins
-  require('tailwindcss-animatecss')({
-        classes: ['animate__animated', 'animate__fadeIn', 'animate__bounceIn', ...],
-        settings: {},
-        variants: [],
-      }),
-]
+// tailwind.config.js
+module.exports = {
+    theme: {
+        animatedSettings: {
+            animatedSpeed: 1000,
+            heartBeatSpeed: 500,
+            hingeSpeed: 2000,
+            bounceInSpeed: 750,
+            bounceOutSpeed: 750,
+            animationDelaySpeed: 500,
+            classes: ['bounce', 'heartBeat']
+        }
+    },
+}
 ```
 
 If you want to prefix your CSS classes, use the tailwind prefix option:
@@ -93,22 +104,7 @@ All of these settings are optional, if not set basic animate.css fallback animat
 The plugin generates all the animate.css utility classes for you.
 
 ### Variants
-Generating different class variants is super easy, just add the desired variant to the variants array at the plugin options.
-```js
-plugins: [
-  // Other plugins
-  require('tailwindcss-animatecss')({
-        classes: [],
-        settings: {},
-        variants: ['responsive', 'hover', 'reduced-motion'],
-      }),
-]
-```
-#### Available variants
-* responsive
-* hover
-* reduced-motion [Read more](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion)
-
+Generating different class variants is super easy, tailwind does all the work for you.
 
 ### Available Animate CSS classes
 * .animate__animated
@@ -228,6 +224,9 @@ plugins: [
 This package is based on awesome [Animate.css](https://github.com/animate-css/animate.css).
 
 ## More Tailwind CSS Plugins
+
+[tailwindcss-layered-box-shadow](https://github.com/bentzibentz/tailwindcss-layered-box-shadow)
+
 [tailwindcss-absolute-center](https://github.com/bentzibentz/tailwindcss-absolute-center)
 
 ## License
