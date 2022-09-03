@@ -1,8 +1,9 @@
 {
   "name": "tailwindcss-animatecss",
-  "version": "1.0.8",
+  "version": "3.0.0",
   "description": "Add Animate CSS as Tailwind CSS plugin to your project.",
-  "main": "index.js",
+  "main": "src/index.js",
+  "author": "Fabian Bentz Webentwicklung <info@fabianbentz.de>",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bentzibentz/tailwindcss-animate.css.git"
@@ -12,14 +13,42 @@
     "tailwindcss",
     "animatecss",
     "animate.css",
+    "animate",
+    "cssanimations",
     "css",
     "awesome",
     "awesome-list"
   ],
-  "author": "Fabian Bentz",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/bentzibentz/tailwindcss-animate.css/issues"
+  "scripts": {
+    "test": "jest",
+    "demo:dev": "npx tailwindcss -i ./demo/style.css -o ./demo/output.css --watch",
+    "demo:build": "npx tailwindcss -i ./demo/style.css -o ./demo/output.css",
+    "demo:deploy": "rm -rf demo/output.css && npm run demo:build && gh-pages -d demo",
+    "prepublishOnly": "node scripts/build.js",
+    "release": "release-it --no-git.requireUpstream"
   },
-  "homepage": "https://github.com/bentzibentz/tailwindcss-animate.css#readme"
+  "peerDependencies": {
+    "tailwindcss": ">=3.1.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.8",
+    "clean-css": "^5.3.1",
+    "gh-pages": "^4.0.0",
+    "jest": "^29.0.1",
+    "jest-matcher-css": "^1.1.0",
+    "postcss": "^8.4.16",
+    "tailwindcss": "^3.1.8"
+  },
+  "dependencies": {
+    "release-it": "^15.4.1"
+  },
+  "release-it": {
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "preset": "conventionalcommits",
+        "infile": "CHANGELOG.md"
+      }
+    }
+  }
 }
