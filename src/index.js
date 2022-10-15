@@ -20,8 +20,6 @@ const animateCssTailwindCss = plugin(
     function ({addUtilities, theme, e}) {
         let animatedSettings = theme('animatedSettings');
 
-        console.log(animatedSettings);
-
         if (!animatedSettings) {
             animatedSettings = {};
         }
