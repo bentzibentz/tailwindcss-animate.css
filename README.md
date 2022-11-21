@@ -56,7 +56,7 @@ Install tailwindcss plugin as described above and add it to your tailwind.config
 ```js
 plugins: [
     // Other plugins
-    require('tailwindcss-animatecss')(),
+    require('tailwindcss-animatecss'),
 ]
 ```
 
