@@ -32,6 +32,7 @@ const animateCssTailwindCss = plugin(
         const bounceOutSpeed = animatedSettings.bounceOutSpeed ? animatedSettings.bounceOutSpeed : 750;
         const animationDelaySpeed = animatedSettings.animationDelaySpeed ? animatedSettings.animationDelaySpeed : 500;
         const classes = animatedSettings.classes ? animatedSettings.classes : [];
+        const defaultClassName = !!animatedSettings.defaultClassName;
 
         const fallbackKeyframes = {
             '@keyframes bounce': keyframes.keyframeBounce,
@@ -497,8 +498,12 @@ const animateCssTailwindCss = plugin(
         addUtilities(
             [
                 Object.entries(utilities).map(([key, value]) => {
+                    let className = 'ani-';
+                    if (!defaultClassName) {
+                        className = '';
+                    }
                     return {
-                        [`.${e(`animate__${key}`)}`]: value,
+                        [`.${e(`${className}${key}`)}`]: value,
                     }
                 })
             ]
@@ -510,6 +515,7 @@ const animateCssTailwindCss = plugin(
         },
         theme: {
             animatedSettings: {
+                defaultClassName: true,
                 animatedSpeed: 1000,
                 heartBeatSpeed: 500,
                 hingeSpeed: 2000,

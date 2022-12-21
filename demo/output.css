@@ -703,12 +703,12 @@ video {
   }
 }
 
-.animate__infinite {
+.ani-infinite {
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
 }
 
-.animate__heartBeat {
+.ani-heartBeat {
   -webkit-animation-name: heartBeat;
           animation-name: heartBeat;
   -webkit-animation-duration: 500ms;
@@ -717,14 +717,14 @@ video {
           animation-timing-function: ease-in-out;
 }
 
-.animate__animated {
+.ani-animated {
   -webkit-animation-duration: 1000ms;
           animation-duration: 1000ms;
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
 }
 
-.hover\:animate__bounce:hover {
+.hover\:ani-bounce:hover {
   -webkit-animation-name: bounce;
           animation-name: bounce;
   transform-origin: center bottom;
