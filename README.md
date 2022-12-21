@@ -48,6 +48,18 @@ npm install tailwindcss-animatecss@1.0.8
 yarn add tailwindcss-animatecss@1.0.8
 ```
 
+### Usage with old default class names ``.animate--``
+
+For Documentation checkout Branch ``feature/v3``
+
+```bash
+npm install tailwindcss-animatecss@3.0.2
+```
+
+```bash
+yarn add tailwindcss-animatecss@3.0.2
+```
+
 ## Usage
 
 Add Tailwind CSS to your project as described [here](https://tailwindcss.com/docs/installation).
@@ -60,7 +72,7 @@ plugins: [
 ]
 ```
 
-You want to determine yourself which classes are used? You just have to set these class names at the classes array. For example if you want ```.animate__fadeIn``` just add ```fadeIn``` to the array.
+You want to determine yourself which classes are used? You just have to set these class names at the classes array. For example if you want ```.ani-fadeIn``` just add ```fadeIn``` to the array.
 You can find all available class names further down.
 
 Defining the classes is recommended to avoid to bloat your css with unused classes and keyframes.
@@ -70,6 +82,8 @@ Defining the classes is recommended to avoid to bloat your css with unused class
 module.exports = {
     theme: {
         animatedSettings: {
+            defaultClassName: true,
+            animatedSpeed: 1000,
             animatedSpeed: 1000,
             heartBeatSpeed: 500,
             hingeSpeed: 2000,
@@ -92,6 +106,7 @@ module.exports = {
 }
 ```
 ### Adjustable, optional settings
+* ```defaultClassName``` used for the default class name generation, like ```.ani-fadeIn```, set it to ``false`` to generate classes without the default class name like like ```.fadeIn```
 * ```animatedSpeed``` used for the animationDuration of the .animated class
 * ```heartBeat``` used for the animationDuration of the .heartBeat class
 * ```hingeSpeed``` used for the animationDuration of the .hingeSpeed class
@@ -107,117 +122,117 @@ The plugin generates all the animate.css utility classes for you.
 Generating different class variants is super easy, tailwind does all the work for you.
 
 ### Available Animate CSS classes
-* .animate__animated
-* .animate__infinite
-* .animate__delay
-* .animate__delay-1s
-* .animate__delay-2s
-* .animate__delay-3s
-* .animate__delay-4s
-* .animate__delay-5s
-* .animate__fast
-* .animate__faster
-* .animate__slow
-* .animate__slower
-* .animate__bounce
-* .animate__flash
-* .animate__pulse
-* .animate__rubberBand
-* .animate__shakeY
-* .animate__shakeX
-* .animate__headShake
-* .animate__swing
-* .animate__tada
-* .animate__wobble
-* .animate__jello
-* .animate__heartBeat
-* .animate__hinge
-* .animate__jackInTheBox
-* .animate__lightSpeedIn
-* .animate__lightSpeedOut
-* .animate__flip
-* .animate__flipInX
-* .animate__flipInY
-* .animate__flipOutX
-* .animate__flipOutY
-* .animate__rotateIn
-* .animate__rotateInDownLeft
-* .animate__rotateInDownRight
-* .animate__rotateInUpLeft
-* .animate__rotateInUpRight
-* .animate__rotateOut
-* .animate__rotateOutDownLeft
-* .animate__rotateOutDownRight
-* .animate__rotateOutUpLeft
-* .animate__rotateOutUpRight
-* .animate__rollIn
-* .animate__rollOut
-* .animate__zoomIn
-* .animate__zoomInUp
-* .animate__zoomInDown
-* .animate__zoomInLeft
-* .animate__zoomInRight
-* .animate__bounceIn
-* .animate__bounceInDown
-* .animate__bounceInUp
-* .animate__bounceInLeft
-* .animate__bounceInRight
-* .animate__bounceOut
-* .animate__bounceOutDown
-* .animate__bounceOutUp
-* .animate__bounceOutLeft
-* .animate__bounceOutRight
-* .animate__slideInDown
-* .animate__slideInLeft
-* .animate__slideInRight
-* .animate__slideInUp
-* .animate__slideOutDown
-* .animate__slideOutLeft
-* .animate__slideOutRight
-* .animate__slideOutUp
-* .animate__fadeIn
-* .animate__fadeInDown
-* .animate__fadeInDownBig
-* .animate__fadeInLeft
-* .animate__fadeInLeftBig
-* .animate__fadeInRight
-* .animate__fadeInRightBig
-* .animate__fadeInUp
-* .animate__fadeInUpBig
-* .animate__fadeInTopLeft
-* .animate__fadeInTopRight
-* .animate__fadeInBottomLeft
-* .animate__fadeInBottomRight
-* .animate__fadeOut
-* .animate__fadeOutDown
-* .animate__fadeOutDownBig
-* .animate__fadeOutLeft
-* .animate__fadeOutLeftBig
-* .animate__fadeOutRight
-* .animate__fadeOutRightBig
-* .animate__fadeOutUp
-* .animate__fadeOutUpBig
-* .animate__fadeOutTopLeft
-* .animate__fadeOutTopRight
-* .animate__fadeOutBottomLeft
-* .animate__fadeOutBottomRight
-* .animate__zoomOutDown
-* .animate__zoomOutLeft
-* .animate__zoomOutRight
-* .animate__zoomOut
-* .animate__zoomOutUp
-* .animate__lightSpeedInRight
-* .animate__lightSpeedInLeft
-* .animate__lightSpeedOutRight
-* .animate__lightSpeedOutLeft
-* .animate__backInDown
-* .animate__backInUp
-* .animate__backInLeft
-* .animate__backInRight
-* .animate__backOutDown
-* .animate__backOutUp
-* .animate__backOutLeft
-* .animate__backOutRight
+* .ani-animated
+* .ani-infinite
+* .ani-delay
+* .ani-delay-1s
+* .ani-delay-2s
+* .ani-delay-3s
+* .ani-delay-4s
+* .ani-delay-5s
+* .ani-fast
+* .ani-faster
+* .ani-slow
+* .ani-slower
+* .ani-bounce
+* .ani-flash
+* .ani-pulse
+* .ani-rubberBand
+* .ani-shakeY
+* .ani-shakeX
+* .ani-headShake
+* .ani-swing
+* .ani-tada
+* .ani-wobble
+* .ani-jello
+* .ani-heartBeat
+* .ani-hinge
+* .ani-jackInTheBox
+* .ani-lightSpeedIn
+* .ani-lightSpeedOut
+* .ani-flip
+* .ani-flipInX
+* .ani-flipInY
+* .ani-flipOutX
+* .ani-flipOutY
+* .ani-rotateIn
+* .ani-rotateInDownLeft
+* .ani-rotateInDownRight
+* .ani-rotateInUpLeft
+* .ani-rotateInUpRight
+* .ani-rotateOut
+* .ani-rotateOutDownLeft
+* .ani-rotateOutDownRight
+* .ani-rotateOutUpLeft
+* .ani-rotateOutUpRight
+* .ani-rollIn
+* .ani-rollOut
+* .ani-zoomIn
+* .ani-zoomInUp
+* .ani-zoomInDown
+* .ani-zoomInLeft
+* .ani-zoomInRight
+* .ani-bounceIn
+* .ani-bounceInDown
+* .ani-bounceInUp
+* .ani-bounceInLeft
+* .ani-bounceInRight
+* .ani-bounceOut
+* .ani-bounceOutDown
+* .ani-bounceOutUp
+* .ani-bounceOutLeft
+* .ani-bounceOutRight
+* .ani-slideInDown
+* .ani-slideInLeft
+* .ani-slideInRight
+* .ani-slideInUp
+* .ani-slideOutDown
+* .ani-slideOutLeft
+* .ani-slideOutRight
+* .ani-slideOutUp
+* .ani-fadeIn
+* .ani-fadeInDown
+* .ani-fadeInDownBig
+* .ani-fadeInLeft
+* .ani-fadeInLeftBig
+* .ani-fadeInRight
+* .ani-fadeInRightBig
+* .ani-fadeInUp
+* .ani-fadeInUpBig
+* .ani-fadeInTopLeft
+* .ani-fadeInTopRight
+* .ani-fadeInBottomLeft
+* .ani-fadeInBottomRight
+* .ani-fadeOut
+* .ani-fadeOutDown
+* .ani-fadeOutDownBig
+* .ani-fadeOutLeft
+* .ani-fadeOutLeftBig
+* .ani-fadeOutRight
+* .ani-fadeOutRightBig
+* .ani-fadeOutUp
+* .ani-fadeOutUpBig
+* .ani-fadeOutTopLeft
+* .ani-fadeOutTopRight
+* .ani-fadeOutBottomLeft
+* .ani-fadeOutBottomRight
+* .ani-zoomOutDown
+* .ani-zoomOutLeft
+* .ani-zoomOutRight
+* .ani-zoomOut
+* .ani-zoomOutUp
+* .ani-lightSpeedInRight
+* .ani-lightSpeedInLeft
+* .ani-lightSpeedOutRight
+* .ani-lightSpeedOutLeft
+* .ani-backInDown
+* .ani-backInUp
+* .ani-backInLeft
+* .ani-backInRight
+* .ani-backOutDown
+* .ani-backOutUp
+* .ani-backOutLeft
+* .ani-backOutRight
 
 ## Demo
 
