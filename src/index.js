@@ -16,7 +16,7 @@ const keyframesFadeOut = require('./keyframes/fadeOut');
 const keyframesBackIn = require('./keyframes/backIn');
 const keyframesBackOut = require('./keyframes/backOut');
 
-const defaultAnimatedClassName = 'animate___';
+const defaultAnimatedClassName = 'animate__';
 
 const animateCssTailwindCss = plugin(
     function ({addUtilities, theme, e}) {
