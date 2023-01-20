@@ -16,6 +16,8 @@ const keyframesFadeOut = require('./keyframes/fadeOut');
 const keyframesBackIn = require('./keyframes/backIn');
 const keyframesBackOut = require('./keyframes/backOut');
 
+const defaultAnimatedClassName = 'animate___';
+
 const animateCssTailwindCss = plugin(
     function ({addUtilities, theme, e}) {
         let animatedSettings = theme('animatedSettings');
@@ -32,6 +34,8 @@ const animateCssTailwindCss = plugin(
         const bounceOutSpeed = animatedSettings.bounceOutSpeed ? animatedSettings.bounceOutSpeed : 750;
         const animationDelaySpeed = animatedSettings.animationDelaySpeed ? animatedSettings.animationDelaySpeed : 500;
         const classes = animatedSettings.classes ? animatedSettings.classes : [];
+        // perform only undefined check to allow empty string/class name
+        const animatedClassName = animatedSettings.animatedClassName === undefined ? defaultAnimatedClassName : animatedSettings.animatedClassName;
 
         const fallbackKeyframes = {
             '@keyframes bounce': keyframes.keyframeBounce,
@@ -498,7 +502,7 @@ const animateCssTailwindCss = plugin(
             [
                 Object.entries(utilities).map(([key, value]) => {
                     return {
-                        [`.${e(`animate__${key}`)}`]: value,
+                        [`.${e(`${animatedClassName}${key}`)}`]: value,
                     }
                 })
             ]
@@ -516,6 +520,7 @@ const animateCssTailwindCss = plugin(
                 bounceInSpeed: 750,
                 bounceOutSpeed: 750,
                 animationDelaySpeed: 500,
+                animatedClassName: defaultAnimatedClassName,
                 classes: ['infinite', 'bounce', 'heartBeat']
             }
         },
