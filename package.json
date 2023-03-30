@@ -32,15 +32,15 @@
     "tailwindcss": ">=3.1.0"
   },
   "devDependencies": {
+    "@release-it/conventional-changelog": "^5.1.0",
     "autoprefixer": "^10.4.8",
     "clean-css": "^5.3.1",
     "gh-pages": "^4.0.0",
     "jest": "^29.0.1",
     "jest-matcher-css": "^1.1.0",
     "postcss": "^8.4.16",
-    "tailwindcss": "^3.1.8",
-    "@release-it/conventional-changelog": "^5.1.0",
-    "release-it": "^15.4.1"
+    "release-it": "^15.4.1",
+    "tailwindcss": "^3.3.0"
   },
   "release-it": {
     "plugins": {
