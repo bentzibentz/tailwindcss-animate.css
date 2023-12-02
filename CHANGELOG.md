@@ -1,5 +1,7 @@
 
 
+## [3.0.5](https://github.com/bentzibentz/tailwindcss-animate.css/compare/v3.0.4...v3.0.5) (2023-12-02)
+
 ### [3.0.4](https://github.com/bentzibentz/tailwindcss-animate.css/compare/v3.0.3...v3.0.4) (2023-03-30)
 
 ### [3.0.3](https://github.com/bentzibentz/tailwindcss-animate.css/compare/v3.0.2...v3.0.3) (2023-03-15)
